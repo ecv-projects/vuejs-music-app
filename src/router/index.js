@@ -2,6 +2,7 @@ import Router from 'vue-router'
 import Vue from 'vue'
 import userApi from '@/api/users'
 import newsRoutes from '@/router/news'
+import artistsRoutes from '@/router/artists'
 import Main from '@/layouts/Main'
 
 Vue.use(Router)
@@ -14,7 +15,8 @@ const router = new Router({
       component: Main,
       path: '',
       children: [
-        ...newsRoutes
+        ...newsRoutes,
+        ...artistsRoutes
       ]
     }
   ]
