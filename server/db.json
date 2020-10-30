@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "email": "toto@example.com",
+      "password": "$2a$10$dXNszRnkYBxyRPwYHgIfxeOD0/IBDbkI2aXpj1qXrMwvoVKPXa1Vq",
+      "id": 1
+    }
+  ],
+  "news": [
+    {
+      "title": "Titre",
+      "content": "Lorem",
+      "id": 1
+    }
+  ]
+}
