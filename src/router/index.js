@@ -1,10 +1,15 @@
 import Router from 'vue-router'
 import Vue from 'vue'
 import userApi from '@/api/users'
-import newsRoutes from '@/router/news'
-import artistsRoutes from '@/router/artists'
+import newsRoutes from '@/router/users/news'
+import artistsRoutes from '@/router/users/artists'
+import adminConcertsRoutes from '@/router/admin/concerts'
+
 import Main from '@/layouts/Main'
+import Admin from '@/layouts/Admin'
 import Index from '@/views/Index.vue'
+import IndexAdmin from '@/views/admin/Index.vue'
+
 
 Vue.use(Router)
 
@@ -14,14 +19,23 @@ const router = new Router({
     routes: [{
         component: Main,
         path: '',
-        children: [
-            {
+        children: [{
                 path: '/',
                 name: 'index',
                 component: Index
             },
             ...newsRoutes,
             ...artistsRoutes
+        ]
+    }, {
+        component: Admin,
+        path: '/admin',
+        children: [{
+            path: '/admin',
+            name: 'admin.index',
+            component: IndexAdmin
+            },
+            ...adminConcertsRoutes
         ]
     }]
 })

@@ -1,5 +1,5 @@
-import Index from '@/views/artists/Index.vue'
-import Show from '@/views/artists/Show.vue'
+import Index from '@/views/users/artists/Index.vue'
+import Show from '@/views/users/artists/Show.vue'
 
 const routes = [
   {
