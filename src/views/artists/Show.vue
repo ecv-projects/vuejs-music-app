@@ -4,7 +4,8 @@
     <img :src="artist.avatar" :alt="artist.name" />
     <p>{{ artist.description }}</p>
     <p>{{ artist.likes }}</p>
-    <p>{{ artist.genreId}}</p>
+    <p>{{ artist.genreId }}</p>
+    <p>{{ genre.name }}</p>
     <p>Afficher liste concerts</p>
     <p>Afficher liste albums</p>
   </div>
@@ -17,19 +18,18 @@ export default {
   computed: {
     ...mapState({
       artist: (state) => state.artists.artist,
-      genre: (state) => state.genres.genre
+      genre: (state) => state.genres.genre,
     }),
   },
   methods: {
     ...mapActions({
-      fetchArtist: 'artists/fetchArtist',
-      fetchGenre: 'genres/fetchGenre'
+      fetchArtist: "artists/fetchArtist",
+      fetchGenre: "genres/fetchGenre",
     }),
   },
-  mounted() {
-    this.fetchArtist(this.$route.params.id);
-    this.fetchGenre(1);
-  },
+  async mounted() {
+    await this.fetchArtist(this.$route.params.id);
+    this.fetchGenre(this.artist.genreId);
+  }
 };
 </script> 
-
