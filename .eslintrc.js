@@ -24,6 +24,7 @@ module.exports = {
     'indent' : 0,
     'space-before-function-paren' : 0,
     'semi' : 0,
-    'space-before-function-paren' : 0
+    'space-before-function-paren' : 0,
+    'eol-last' : 0
   }
 }
