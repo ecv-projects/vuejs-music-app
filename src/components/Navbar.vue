@@ -2,6 +2,9 @@
   <div>
     <b-navbar>
       <template slot="start">
+        <b-navbar-item tag="router-link" :to="{ name: 'index' }">
+          Home
+        </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'news.index' }">
           News
         </b-navbar-item>
