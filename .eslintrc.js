@@ -20,6 +20,9 @@ module.exports = {
     'comma-dangle': 0,
     'lines-between-class-members': 0,
     'no-multiple-empty-lines': 0,
-    'camelcase': 0
+    'camelcase': 0,
+    'indent' : 0,
+    'space-before-function-paren' : 0,
+    'semi' : 0
   }
 }

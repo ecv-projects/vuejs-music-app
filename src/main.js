@@ -6,9 +6,13 @@ import store from '@/store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import Buefy from 'buefy'
+import 'buefy/dist/buefy.css'
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.use(Buefy)
 
 new Vue({
   router,

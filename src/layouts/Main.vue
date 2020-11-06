@@ -1,22 +1,24 @@
 <template>
-  <el-container>
-    <el-container class="main">
-      <Navbar />
-      <el-main>
-        <transition name="fade" mode="out-in">
-          <router-view />
-        </transition>
-      </el-main>
-    </el-container>
-  </el-container>
+  <div>
+    <Navbar />
+    <div class="container">
+      <div class="main-content">
+        <el-main>
+          <transition name="fade" mode="out-in">
+            <router-view />
+          </transition>
+        </el-main>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
+import Navbar from "@/components/Navbar";
 
 export default {
   components: {
-    Navbar
-  }
-}
+    Navbar,
+  },
+};
 </script>

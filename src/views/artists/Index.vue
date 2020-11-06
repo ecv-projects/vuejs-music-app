@@ -5,12 +5,11 @@
       v-for="item in artists"
       :key="item.id"
       >
-    <!-- <router-link
+    <router-link
       :to="{name: 'artists.show', params: {id: item.id}}"
     >
-    {{ item.title }}
-    </router-link> -->
-    <p>{{ item.name }}</p>
+    {{ item.name }}
+    </router-link>
     </li>
     </ul>
   </div>
