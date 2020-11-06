@@ -7,7 +7,7 @@ const state = {
 
 const getters = {
   getAllArtists: state => state.allArtists,
-  getArtist: state => state.artist,
+  getArtist: state => state.artist
 }
 
 const mutations = {
