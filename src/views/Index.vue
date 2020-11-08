@@ -1,21 +1,22 @@
 <template>
   <div>
     <h1 class="title is-1">Home</h1>
-    <h2 class="title is-2">Lasts albums</h2>
-    <div class="albums-container">
-      <div class="card" v-for="item in getLastAlbums" :key="item.id">
-        <header class="card-header">
-          <div class="card-header-title">
-            <p>{{ item.name }}</p>
-            <p><i>by {{ getArtistByAlbum(item.artistId).name }}</i></p>
-          </div>
-        </header>
-        <div class="card-content">
-          <div class="content">
-            <p><b>Infos : </b></p>
-            <p>Released : {{ item.released }} <br>Tracks : {{ item.tracks }}</p>
-          </div>
+    <div class="albums">
+      <h2 class="title is-2">Lasts albums</h2>
+      <div class="albums-container">
+        <div v-for="album in getLastAlbums" :key="album.id">
+          <AlbumCard
+            :album="album"
+            :artist="getArtistByAlbum(album.artistId)"
+          ></AlbumCard>
         </div>
+      </div>
+    </div>
+    <hr />
+    <div class="news">
+      <h2 class="title is-2">Lasts news</h2>
+      <div class="news-container">
+        <div></div>
       </div>
     </div>
   </div>
@@ -23,8 +24,13 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
+import AlbumCard from "../components/albumCard";
 
 export default {
+  name: "Homepage",
+  components: {
+    AlbumCard,
+  },
   computed: {
     ...mapState({
       albums: (state) => state.albums.allAlbums,
