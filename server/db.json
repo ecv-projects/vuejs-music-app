@@ -67,6 +67,20 @@
       "released": 2018,
       "tracks": 13,
       "artistId": 2
+    },
+    {
+      "id": 3,
+      "name": "Viva la Vida or Death and All His Friends",
+      "released": 2008,
+      "tracks": 10,
+      "artistId": 1
+    },
+    {
+      "id": 4,
+      "name": "A Head Full of Dreams",
+      "released": 2015,
+      "tracks": 11,
+      "artistId": 1
     }
   ],
   "concerts": [
