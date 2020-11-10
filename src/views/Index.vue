@@ -2,7 +2,11 @@
   <div>
     <h1 class="title is-1">Home</h1>
     <div class="artists">
-      <h2 class="title is-2">Artists</h2>
+      <div class="artists-header">
+        <h2 class="title is-2">Artists</h2>
+        <router-link :to="{ path: '/artists' }"> See all artists </router-link>
+      </div>
+
       <div class="artists-container">
         <div v-for="artist in artists" :key="artist.id">
           <ArtistCard :artist="artist"></ArtistCard>
@@ -23,9 +27,12 @@
     </div>
     <hr />
     <div class="news">
-      <h2 class="title is-2">Lasts news</h2>
+      <div class="news-header">
+        <h2 class="title is-2">3 lasts news</h2>
+        <router-link :to="{ path: '/news' }"> See all news </router-link>
+      </div>
       <div class="news-container">
-        <div v-for="news in getLastNews" :key="news.id">
+        <div v-for="news in getLastNews.slice(0, 3)" :key="news.id">
           <NewsCard :news="news"></NewsCard>
         </div>
       </div>
@@ -57,9 +64,7 @@ export default {
     },
 
     getLastNews() {
-      return this.manyNews
-        .slice()
-        .sort((a, b) => a.published < b.published);
+      return this.manyNews.slice().sort((a, b) => a.published < b.published);
     },
   },
   methods: {
@@ -72,7 +77,7 @@ export default {
       return this.artists.find((artist) => {
         return artist.id === id;
       });
-    }
+    },
   },
   mounted() {
     this.fetchAllAlbums();
@@ -98,6 +103,12 @@ export default {
 }
 
 .albums-container .card-header-title {
+  justify-content: space-between;
+}
+
+.news .news-header, .artists .artists-header {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 </style>
