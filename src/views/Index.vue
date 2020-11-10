@@ -1,6 +1,15 @@
 <template>
   <div>
     <h1 class="title is-1">Home</h1>
+    <div class="artists">
+      <h2 class="title is-2">Artists</h2>
+      <div class="artists-container">
+        <div v-for="artist in artists" :key="artist.id">
+          <ArtistCard :artist="artist"></ArtistCard>
+        </div>
+      </div>
+    </div>
+    <hr />
     <div class="albums">
       <h2 class="title is-2">Lasts albums</h2>
       <div class="albums-container">
@@ -24,12 +33,14 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import AlbumCard from "../components/albumCard";
+import AlbumCard from "../components/home/AlbumCard";
+import ArtistCard from "../components/home/ArtistCard";
 
 export default {
   name: "Homepage",
   components: {
     AlbumCard,
+    ArtistCard,
   },
   computed: {
     ...mapState({
@@ -59,10 +70,18 @@ export default {
 </script>
 
 <style>
-.albums-container {
+.albums-container,
+.artists-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+}
+
+.albums-container {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.artists-container {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .albums-container .card-header-title {

@@ -4,7 +4,12 @@
       <div class="card-header-title">
         <p>{{ album.name }}</p>
         <p>
-          <i>by {{ artist.name }}</i>
+          <i
+            >by
+            <router-link :to="{ path: `/artists/${artist.id}` }">{{
+              artist.name
+            }}</router-link></i
+          >
         </p>
       </div>
     </header>
@@ -25,7 +30,7 @@ export default {
   name: "AlbumCard",
   props: {
     album: Object,
-    artist: Object
+    artist: Object,
   },
 };
 </script>
