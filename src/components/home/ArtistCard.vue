@@ -37,10 +37,11 @@ export default {
 
 <style>
 .artists-container .card-image {
-  background-color:  #faf9f9;
+  background-color: #faf9f9;
 }
 .artists-container .card-image img {
-  width: auto;
+  width: auto!important;
   margin: auto;
 }
+
 </style>

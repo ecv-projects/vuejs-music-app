@@ -25,7 +25,9 @@
     <div class="news">
       <h2 class="title is-2">Lasts news</h2>
       <div class="news-container">
-        <div></div>
+        <div v-for="news in getLastNews" :key="news.id">
+          <NewsCard :news="news"></NewsCard>
+        </div>
       </div>
     </div>
   </div>
@@ -35,36 +37,47 @@
 import { mapActions, mapState } from "vuex";
 import AlbumCard from "../components/home/AlbumCard";
 import ArtistCard from "../components/home/ArtistCard";
+import NewsCard from "../components/home/NewsCard";
 
 export default {
   name: "Homepage",
   components: {
     AlbumCard,
     ArtistCard,
+    NewsCard,
   },
   computed: {
     ...mapState({
       albums: (state) => state.albums.allAlbums,
       artists: (state) => state.artists.allArtists,
+      manyNews: (state) => state.news.manyNews,
     }),
     getLastAlbums() {
       return this.albums.slice().sort((a, b) => a.released < b.released);
+    },
+
+    getLastNews() {
+      return this.manyNews
+        .slice()
+        .sort((a, b) => a.published < b.published);
     },
   },
   methods: {
     ...mapActions({
       fetchAllAlbums: "albums/fetchAllAlbums",
       fetchAllArtists: "artists/fetchAllArtists",
+      fetchManyNews: "news/fetchManyNews",
     }),
     getArtistByAlbum(id) {
       return this.artists.find((artist) => {
         return artist.id === id;
       });
-    },
+    }
   },
   mounted() {
     this.fetchAllAlbums();
     this.fetchAllArtists();
+    this.fetchManyNews();
   },
 };
 </script>
