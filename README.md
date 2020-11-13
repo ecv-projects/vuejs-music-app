@@ -1,4 +1,7 @@
 # ecv
+Groupe
+
+Juliette CONNAN, Alice MOUCHARD, Julie SALHA
 
 ## Project setup
 ```
