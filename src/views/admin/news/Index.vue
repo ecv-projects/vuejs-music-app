@@ -42,17 +42,4 @@ export default {
 }
 </script>
 
-<style>
-  .container-admin {
-    width: 70%;
-  }
 
-  .admin-content {
-    padding: 10px;
-  }
-
-  .admin-content .el-main {
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
