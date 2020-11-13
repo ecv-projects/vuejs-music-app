@@ -3,7 +3,10 @@ import Vue from 'vue'
 import userApi from '@/api/users'
 import newsRoutes from '@/router/users/news'
 import artistsRoutes from '@/router/users/artists'
+import adminAlbumsRoutes from '@/router/admin/albums'
+import adminArtistsRoutes from '@/router/admin/artists'
 import adminConcertsRoutes from '@/router/admin/concerts'
+import adminNewsRoutes from '@/router/admin/news'
 
 import Main from '@/layouts/Main'
 import Admin from '@/layouts/Admin'
@@ -35,7 +38,10 @@ const router = new Router({
             name: 'admin.index',
             component: IndexAdmin
             },
-            ...adminConcertsRoutes
+            ...adminAlbumsRoutes,
+            ...adminArtistsRoutes,
+            ...adminConcertsRoutes,
+            ...adminNewsRoutes
         ]
     }]
 })
