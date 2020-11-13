@@ -43,5 +43,4 @@ export default {
   width: auto!important;
   margin: auto;
 }
-
 </style>
