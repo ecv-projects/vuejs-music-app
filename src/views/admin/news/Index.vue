@@ -18,18 +18,6 @@
                 </ul>
             </div>
         </div>
-        <b-menu class="admin-menu">
-          <b-menu-list label="Edition menu">
-            <b-menu-item label="Albums" icon="link" tag="router-link"  to="/admin/albums"></b-menu-item>
-            <b-menu-item label="Artists" icon="link" tag="router-link"  to="/admin/artists"></b-menu-item>
-            <b-menu-item label="Concerts" icon="link" tag="router-link"  to="/admin/concerts"></b-menu-item>
-            <b-menu-item label="News" icon="link" tag="router-link" to="/admin/news"></b-menu-item>
-          </b-menu-list>
-
-          <b-menu-list label="Actions">
-            <b-menu-item label="Logout"></b-menu-item>
-          </b-menu-list>
-        </b-menu>
     </div>
 </template>
 
@@ -56,18 +44,15 @@ export default {
 
 <style>
   .container-admin {
-    display: flex;
-    justify-content: space-between;
+    width: 70%;
   }
 
   .admin-content {
     padding: 10px;
   }
 
-  .admin-menu {
-    height: 100vh;
-    padding: 20px 40px;
-    background-color: lightgrey;
+  .admin-content .el-main {
+    display: flex;
+    justify-content: space-between;
   }
-
 </style>

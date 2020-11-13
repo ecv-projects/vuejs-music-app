@@ -8,6 +8,7 @@
           <transition name="fade" mode="out-in">
             <router-view />
           </transition>
+          <AdminMenu />
         </el-main>
       </div>
     </div>
@@ -16,11 +17,12 @@
 
 <script>
 import Navbar from "@/components/Navbar";
+import AdminMenu from "@/components/AdminMenu"
 
 export default {
   components: {
     Navbar,
+    AdminMenu
   },
 };
 </script>
-

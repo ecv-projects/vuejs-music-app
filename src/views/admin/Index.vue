@@ -29,10 +29,4 @@
     padding: 10px;
   }
 
-  .admin-menu {
-    height: 100vh;
-    padding: 20px 40px;
-    background-color: lightgrey;
-  }
-
 </style>
