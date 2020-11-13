@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-content">
     <h1 class="title is-1">Home</h1>
     <div class="artists">
       <div class="artists-header">
@@ -111,4 +111,9 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
+
+.admin-content .home-content {
+  width: 70%;
+}
 </style>
+

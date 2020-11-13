@@ -11,7 +11,7 @@ import adminNewsRoutes from '@/router/admin/news'
 import Main from '@/layouts/Main'
 import Admin from '@/layouts/Admin'
 import Index from '@/views/Index.vue'
-import IndexAdmin from '@/views/admin/Index.vue'
+//import IndexAdmin from '@/views/admin/Index.vue'
 
 
 Vue.use(Router)
@@ -35,8 +35,8 @@ const router = new Router({
         path: '/admin',
         children: [{
             path: '/admin',
-            name: 'admin.index',
-            component: IndexAdmin
+            name: 'index',
+            component: Index
             },
             ...adminAlbumsRoutes,
             ...adminArtistsRoutes,
