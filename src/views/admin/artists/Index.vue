@@ -31,20 +31,21 @@
 import { mapActions, mapState } from 'vuex'
 import ArtistCard from "@/components/admin/ArtistCard";
 
+
 export default {
   name: "Admin artists",
   components: {
     ArtistCard
   },
-  computed: {
-    ...mapState({
-      artists: state => state.artists.allArtists
-    })
-  },
   methods: {
     ...mapActions({
       fetchAllArtists: 'artists/fetchAllArtists',
       deleteArtist: 'artists/deleteArtist'
+    })
+  },
+  computed: {
+    ...mapState({
+      artists: state => state.artists.allArtists
     })
   },
   mounted () {

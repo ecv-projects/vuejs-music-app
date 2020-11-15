@@ -3,13 +3,14 @@ import Vue from 'vue'
 import userApi from '@/api/users'
 import newsRoutes from '@/router/users/news'
 import artistsRoutes from '@/router/users/artists'
+import adminAlbumsRoutes from '@/router/admin/albums'
+import adminArtistsRoutes from '@/router/admin/artists'
 import adminConcertsRoutes from '@/router/admin/concerts'
+import adminNewsRoutes from '@/router/admin/news'
 
 import Main from '@/layouts/Main'
 import Admin from '@/layouts/Admin'
 import Index from '@/views/Index.vue'
-import IndexAdmin from '@/views/admin/Index.vue'
-
 
 Vue.use(Router)
 
@@ -33,9 +34,12 @@ const router = new Router({
         children: [{
             path: '/admin',
             name: 'admin.index',
-            component: IndexAdmin
+            component: Index
             },
-            ...adminConcertsRoutes
+            ...adminAlbumsRoutes,
+            ...adminArtistsRoutes,
+            ...adminConcertsRoutes,
+            ...adminNewsRoutes
         ]
     }]
 })

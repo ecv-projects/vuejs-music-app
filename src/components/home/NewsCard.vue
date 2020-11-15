@@ -1,0 +1,49 @@
+<template>
+  <div>
+    <router-link :to="{ path: `/news/${news.id}` }">
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image">
+              <img :src="news.image" :alt="news.title" />
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <small>{{ getDate }}</small>
+              </p>
+              <h4 class="title is-4">
+                {{ news.title }}
+              </h4>
+            </div>
+          </div>
+        </article>
+      </div>
+    </router-link>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "NewsCard",
+  props: {
+    news: Object,
+  },
+  computed: {
+      getDate() {
+          return Intl.DateTimeFormat('en-GB').format(new Date(this.news.published)) 
+      }
+  }
+};
+</script>
+
+<style>
+.news-container .media .image img {
+  max-width: 230px;
+}
+
+.news-container .box {
+  margin-bottom: 20px;
+}
+</style>
