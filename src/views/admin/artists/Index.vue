@@ -8,23 +8,16 @@
           >Add artist</b-button
           >
         <ul class="admin-content--artists__list">
-          <div v-for="artist in artists" :key="artist.id" class="admin-content--artists__item">
-            <ArtistCard :artist="artist"></ArtistCard>
-            <footer class="admin-content--artists__item__options">
-              <b-button
-              type="is-info is-light"
-              class="admin-content--artists__item__option admin-content--artists__item__option--edit"
-              @click="editArtist"
-              >Edit</b-button
-              >
-              <b-button
-              @click="deleteArtist(artist.id)"
+          <div class="testttttttt" :id="artist.id" v-for="(artist, index) in artists" :key="artist.id" v-on:delete-artist="deleteThisArtist(index)">
+            <ArtistCard  :artist="artist" ></ArtistCard>
+                          <b-button
+              @click="deleteArtist(artist.id, index)"
               type="is-danger is-light"
-              class="admin-content--artists__item__option admin-content--artists__item__option--delete"
+              class=" admin-content--artists__item__option admin-content--artists__item__option--delete"
+              :index="index"
               :id="artist.id"
               >Delete</b-button
               >
-            </footer>
           </div>
         </ul>
       </div>
@@ -35,7 +28,7 @@
 import { mapActions, mapState } from 'vuex'
 import ArtistCard from "@/components/adminJulie/ArtistCard";
 export default {
-  name: "Admin artists",
+  name: "AdminArtists",
   components: {
     ArtistCard
   },
@@ -43,7 +36,12 @@ export default {
     ...mapActions({
       fetchAllArtists: 'artists/fetchAllArtists',
       deleteArtist: 'artists/deleteArtist'
-    })
+    }),
+    deleteThisArtist: function(id, index) {
+      event.preventDefault;
+      this.deleteArtist(id);
+      this.artists.splice(index, 1);
+    }
   },
   computed: {
     ...mapState({
@@ -52,7 +50,8 @@ export default {
   },
   mounted () {
     this.fetchAllArtists();
-    this.deleteArtist();
+    //this.deleteArtist();
+  
     // Observable deletion  this.$set(artist)
   }
 }

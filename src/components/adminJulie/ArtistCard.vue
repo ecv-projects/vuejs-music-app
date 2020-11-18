@@ -21,29 +21,21 @@ import { mapActions, mapState } from 'vuex'
 
 export default {
   name: "ArtistCard",
+  props: {
+    artist: Object
+  },
   computed: {
     ...mapState({
-      artists: state => state.artists.allArtists
+      artists: state => state.artists.allArtists,
     })
   },
   methods: {
     ...mapActions({
-      fetchAllArtists: 'artists/fetchAllArtists',
-      deleteArtist: 'artists/deleteArtist'
+      fetchAllArtists: 'artists/fetchAllArtists'
     })
   },
   mounted () {
     this.fetchAllArtists();
-    this.deleteArtist();
   }
 }
-</script>
-
-<script>
-export default {
-  name: "ArtistCard",
-  props: {
-    artist: Object,
-  },
-};
 </script>
