@@ -1,23 +1,15 @@
 <template>
     <div class="container-admin">
       <div class="admin-content admin-content--artists">
-          <h1>All artists</h1>
-          <b-button
-          type="is-success"
-          class="admin-content--artists__item__option admin-content--artists__item__option--create"
-          >Add artist</b-button
-          >
+        <h1>All artists</h1>
+        <b-button
+        type="is-success"
+        class="admin-content--artists__item__option admin-content--artists__item__option--create"
+        >Add artist</b-button
+        >
         <ul class="admin-content--artists__list">
-          <div class="testttttttt" :id="artist.id" v-for="(artist, index) in artists" :key="artist.id" v-on:delete-artist="deleteThisArtist(index)">
-            <ArtistCard  :artist="artist" ></ArtistCard>
-                          <b-button
-              @click="deleteArtist(artist.id, index)"
-              type="is-danger is-light"
-              class=" admin-content--artists__item__option admin-content--artists__item__option--delete"
-              :index="index"
-              :id="artist.id"
-              >Delete</b-button
-              >
+          <div >
+            <ArtistCard  :artist="artist" class="testttttttt" :id="artist.id" v-for="(artist, index) in artists" :key="artist.id" v-on:edit-artist="editThisArtist(artists.indexOf(artist), artist.id)" v-on:delete-artist="deleteThisArtist(index, artist.id)"></ArtistCard>
           </div>
         </ul>
       </div>
@@ -27,6 +19,8 @@
 <script>
 import { mapActions, mapState } from 'vuex'
 import ArtistCard from "@/components/adminJulie/ArtistCard";
+import ArtistForm from "@/components/adminJulie/ArtistForm";
+
 export default {
   name: "AdminArtists",
   components: {
@@ -37,10 +31,13 @@ export default {
       fetchAllArtists: 'artists/fetchAllArtists',
       deleteArtist: 'artists/deleteArtist'
     }),
-    deleteThisArtist: function(id, index) {
-      event.preventDefault;
-      this.deleteArtist(id);
+    editThisArtist: function(index, id) {
+      this.artists[index] = this.artist;
+      this.editArtist(id);
+    },
+      deleteThisArtist: function(index, id) {
       this.artists.splice(index, 1);
+      this.deleteArtist(id);
     }
   },
   computed: {
@@ -50,9 +47,6 @@ export default {
   },
   mounted () {
     this.fetchAllArtists();
-    //this.deleteArtist();
-  
-    // Observable deletion  this.$set(artist)
   }
 }
 </script>

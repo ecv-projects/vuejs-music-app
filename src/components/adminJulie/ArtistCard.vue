@@ -13,6 +13,20 @@
               <p>{{ artist.description.substring(0, 70) }}...</p>
               <p class="admin-content--artists__item__likes">{{ artist.likes }}<img src="../../assets/heart.svg"></p>
           </div>
+          <b-button
+          @click="$emit('edit-artist')"
+          type="is-info is-light"
+          class="admin-content--artists__item__option admin-content--artists__item__option--edit"
+          >Edit</b-button
+          >
+          <b-button
+          @click="$emit('delete-artist')"
+          type="is-danger is-light"
+          class=" admin-content--artists__item__option admin-content--artists__item__option--delete"
+          :index="index"
+          :id="artist.id"
+          >Delete</b-button
+          >
     </div>
 </template>  
 
@@ -31,7 +45,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      fetchAllArtists: 'artists/fetchAllArtists'
+      fetchAllArtists: 'artists/fetchAllArtists',
+      deleteArtist: 'artists/deleteArtist'
     })
   },
   mounted () {
