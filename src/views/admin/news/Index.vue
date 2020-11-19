@@ -1,45 +1,76 @@
 <template>
-    <div class="container-admin">
-        <div class="admin-content news">
-            <h1>Admin News Index</h1>
-            <h2>All news</h2>
-            <div>
-                <ul>
-                    <li
-                    v-for="item in news"
-                    :key="item.id"
-                    >
-                        <router-link
-                        :to="{name: '', params: {id: item.id}}"
-                        >
-                            {{ item.title }} {{ item.published }}
-                        </router-link>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <div class="container-admin">
+    <div class="admin-content news">
+      <h2 class="title is-2">All news</h2>
+      <b-button class="is-info add-news" @click="create">Create News</b-button>
+      <b-field label="">
+        <b-input
+          type="text"
+          placeholder="Search a news"
+          v-model="search"
+        ></b-input>
+      </b-field>
+      <div>
+        <ul>
+          <li v-for="item in filteredList" :key="item.id">
+            <router-link
+              :to="{ name: 'admin.news.show', params: { id: item.id } }"
+            >
+              <NewsCard :news="item" />
+            </router-link>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState } from "vuex";
+import NewsCard from "@/components/home/NewsCard";
 
 export default {
+  components: {
+    NewsCard,
+  },
+  data() {
+    return {
+      search: "",
+    };
+  },
   methods: {
     ...mapActions({
-      fetchManyNews: 'news/fetchManyNews'
-    })
+      fetchManyNews: "news/fetchManyNews",
+    }),
+    create() {
+      this.$router.push({
+        name: "admin.news.create",
+      });
+    },
   },
   computed: {
     ...mapState({
-      news: state => state.news.manyNews
-    })
+      news: (state) => state.news.manyNews,
+    }),
+    filteredList() {
+      return this.news.filter((news) => {
+        return news.title.toLowerCase().includes(this.search.toLowerCase());
+      });
+    },
   },
-  mounted () {
+  mounted() {
     this.fetchManyNews();
-    console.log(this.news);
-  }
-}
+  },
+};
 </script>
 
+<style>
+.container-admin .news .add-news {
+  margin-bottom: 20px;
+}
+
+.container-admin .news .box {
+  margin-bottom: 20px;
+}
+</style>
 
