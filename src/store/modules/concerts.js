@@ -24,7 +24,7 @@ const actions = {
     const { data } = await axios.get('http://localhost:3000/concerts')
     commit('setAllConcerts', data)
   },
-  async fetchconcert ({ commit }, id) {
+  async fetchConcert ({ commit }, id) {
     const { data } = await axios.get(`http://localhost:3000/concerts/${id}`)
     commit('setConcert', data)
   },

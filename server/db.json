@@ -161,6 +161,18 @@
       "name": "O2 Academy Manchester",
       "date": "10/12/2018",
       "artistId": 2
+    },
+    {
+      "name": "Olympia",
+      "date": "2020-11-26T23:00:00.000Z",
+      "artist": 1,
+      "id": 4
+    },
+    {
+      "name": "Grand Rex",
+      "date": "2021-11-08T23:00:00.000Z",
+      "artist": 3,
+      "id": 5
     }
   ]
 }
