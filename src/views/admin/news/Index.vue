@@ -12,7 +12,7 @@
       </b-field>
       <div>
         <ul>
-          <li v-for="item in filteredList" :key="item.id">
+          <li v-for="item in filteredSearchList" :key="item.id">
             <router-link
               :to="{ name: 'admin.news.show', params: { id: item.id } }"
             >
@@ -52,7 +52,7 @@ export default {
     ...mapState({
       news: (state) => state.news.manyNews,
     }),
-    filteredList() {
+    filteredSearchList() {
       return this.news.filter((news) => {
         return news.title.toLowerCase().includes(this.search.toLowerCase());
       });
