@@ -18,7 +18,13 @@
           </b-modal>
         </section>
         <ul class="admin-content--artists__list">
-            <ArtistCard  :artist="artist" class="admin-content--artists__item" :id="artist.id" v-for="(artist, index) in artists" :key="artist.id" v-on:edit-artist="editThisArtist(artists.indexOf(artist), artist.id)" v-on:delete-artist="deleteThisArtist(index, artist.id)"></ArtistCard>
+            <ArtistCard  
+            :artist="artist" 
+            class="admin-content--artists__item" 
+            :id="artist.id" v-for="(artist, index) in artists" 
+            :key="artist.id"  
+            v-on:delete-artist="deleteThisArtist(index, artist.id)" 
+            />
         </ul>
       </div>
     </div>

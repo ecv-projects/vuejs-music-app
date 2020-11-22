@@ -30,6 +30,8 @@ module.exports = {
     'no-unused-vars' : 0,
     'spaced-comment' : 0,
     'no-unused-expressions' : 0,
-    'key-spacing' : 0
+    'key-spacing' : 0,
+    'space-in-parens' : 0,
+    'no-labels' : 0
   }
 }

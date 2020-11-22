@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-on:refresh="this.fetchAllArtists();">
         <header>
           <div class="admin-content--artists__item__image">
               <figure class="image is-4by3">
@@ -10,7 +10,7 @@
         </header>
           <div class="admin-content--artists__item__content">
               <p>{{ artist.origin }}</p>
-              <p>{{ artist.description.substring(0, 70) }}...</p>
+              <p>{{ artist.description }}...</p>
               <p class="admin-content--artists__item__likes">{{ artist.likes }}<img src="../../assets/heart.svg"></p>
           </div>
           <b-button

@@ -1,5 +1,5 @@
 <template>
-  <form action="" >
+  <form action="" id="modal-artist-form">
     <div class="modal-card" style="width: auto">
       <header class="modal-card-head">
           <p class="modal-card-title">Add a new artist/group</p>
@@ -12,30 +12,22 @@
         <b-field label="Name">
           <b-input  
           type="text" 
-          :value="name"
+          name="name"
           placeholder="Name"
-          aria-required="true" required/>
+          aria-required="true" 
+          v-model="name"
+          required/>
         </b-field>
-        <b-field label="Avatar" class="file is-primary" :class="{'has-name': !!file}">
-            <b-upload v-model="file" class="file-label" >
-                <div class="file-cta">
-                    <b-icon class="file-icon" icon="upload"></b-icon>
-                    <span class="file-label">Click to upload</span>
-                </div>
-                <span class="file-name" v-if="file">
-                    {{ file.name }}
-                </span>
-            </b-upload>
-        </b-field>
-        <b-field label="Or URL Avatar">
+        <b-field label="Avatar">
           <b-input 
           type="url" 
-          :value="avatar"
+          name="avatar"
+          v-model="avatar"
           placeholder="URL avatar"
           />
         </b-field>
         <b-field label="Country">
-          <b-select placeholder="Select a country" required>
+          <b-select placeholder="Select a country" name="origin"  v-model="origin" required>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
             <option value="Albania">Albania</option>
@@ -283,7 +275,7 @@
           </b-select>
         </b-field>
         <b-field label="Genre">
-          <b-select placeholder="Select a genre" required>
+          <b-select placeholder="Select a genre" name="genre"  v-model="genreId" required>
             <option value="1">Rock</option>
             <option value="2">Metal</option>
             <option value="3">Rap</option>
@@ -295,11 +287,8 @@
           </b-select>
         </b-field>
         <b-field label="Description">
-          <b-input type="text" />
+          <b-input type="text"  name="description"  v-model="description"/>
         </b-field>
-
-
-
       </section>
       <footer class="modal-card-foot">
         <b-button
@@ -314,10 +303,9 @@
   </form>
 </template>
 
-
- 
-
 <script>
+  import { mapActions, mapState } from 'vuex'
+
   export default {
     name: "ArtistForm",
     props: {
@@ -325,15 +313,30 @@
     },
     data() {
       return {
-        file: null
+        file: null,
+        name: '',
+        avatar : '',
+        origin : '',
+        genreId : '',
+        description : ''
       }
     },
     methods: {
+      ...mapActions({
+        createArtist: 'artists/createArtist',
+    }),
       addArtist() {
-        console.log('new artist created')
-      },
-      closeModal() {
-        console.log('close modal');
+        const newArtist = {
+          name: this.name, 
+          avatar: this.avatar,
+          origin: this.origin, 
+          genreId: this.genreId, 
+          description: this.description
+        };
+        console.log(newArtist);
+        this.createArtist(newArtist);
+        this.$emit('refresh');
+        this.$emit('close');
       }
     },
     mounted() {
