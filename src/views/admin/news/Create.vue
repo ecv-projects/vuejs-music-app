@@ -19,14 +19,28 @@
     <b-field label="Content">
       <b-input maxlength="1000" type="textarea" v-model="content"></b-input>
     </b-field>
-    <b-button class="is-success is-light" @click="create">Create</b-button>
+    <Button
+      :type="'news'"
+      :module="'news'"
+      :button="'create'"
+      :data="{
+        title: this.title,
+        published: new Date(this.published),
+        image: this.image,
+        content: this.content,
+      }"
+    ></Button>
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import Button from "@/components/buttons/Button";
 
 export default {
+  components: {
+    Button,
+  },
   data() {
     return {
       title: "",

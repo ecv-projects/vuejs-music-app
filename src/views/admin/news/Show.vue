@@ -1,27 +1,29 @@
 <template>
-  <div class="container-admin">
-    <router-link :to="{ name: 'admin.news.index' }"
-      >Back</router-link
-    >
+  <div class="container-admin news">
+    <router-link :to="{ name: 'admin.news.index' }">Back</router-link>
     <h2 class="title is-3">{{ news.title }}</h2>
     <p>{{ getDate }}</p>
     <img :src="news.image" alt="news.title" />
     <p>{{ news.content }}</p>
-    <ButtonEdit :type="'news'" :id="news.id"></ButtonEdit>
-    <ButtonDelete :type="'news'" :id="news.id"></ButtonDelete>
+    <div class="news-buttons">
+      <Button :button="'edit'" :type="'news'" :id="news.id"></Button>
+      <Button
+        :button="'delete'"
+        :type="'news'"
+        :module="'news'"
+        :id="news.id"
+      ></Button>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
-import ButtonEdit from '@/components/buttons/ButtonEdit';
-import ButtonDelete from '@/components/buttons/ButtonDelete';
-
+import Button from "@/components/buttons/Button";
 
 export default {
   components: {
-    ButtonEdit,
-    ButtonDelete
+    Button,
   },
   methods: {
     ...mapActions({
@@ -41,3 +43,14 @@ export default {
   },
 };
 </script>
+
+<style>
+.news-buttons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.news-buttons button:nth-child(1) {
+  margin-right: 20px;
+}
+</style>

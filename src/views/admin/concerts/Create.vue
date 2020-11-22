@@ -1,6 +1,6 @@
 <template>
   <div class="container-admin">
-    <h2 class="title is-2">Create a news</h2>
+    <h2 class="title is-2">Create a concert</h2>
     <b-field label="Name">
       <b-input type="text" v-model="name"></b-input>
     </b-field>
@@ -23,14 +23,27 @@
                 </option>
             </b-select>
     </b-field>
-    <b-button class="is-success is-light" @click="create">Create</b-button>
+    <Button
+      :type="'concert'"
+      :module="'concerts'"
+      :button="'create'"
+      :data="{
+        name: this.name,
+        date: this.date,
+        artistId: this.artist,
+      }"
+    ></Button>
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
+import Button from '@/components/buttons/Button'
 
 export default {
+  components: {
+    Button
+  },
   data() {
     return {
       name: "",
@@ -46,18 +59,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      createConcert: "concerts/createConcert",
       fetchAllArtists: "artists/fetchAllArtists"
     }),
-    create() {
-      const payload = {
-        name: this.name,
-        date: this.date,
-        artistId: this.artist,
-      };
-      this.createConcert(payload);
-      this.$router.push({ name: "admin.concerts.index" });
-    },
   },
   mounted() {
       this.fetchAllArtists()

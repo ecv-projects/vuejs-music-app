@@ -1,23 +1,28 @@
 <template>
-  <div class="container-admin">
+  <div class="container-admin concerts">
     <router-link :to="{ name: 'admin.concerts.index' }">Back</router-link>
     <h2 class="title is-3">{{ concert.name }}</h2>
     <p>{{ artistByConcert.name }}</p>
-    <p>{{ getDate }}</p>
-    <ButtonEdit :type="'concerts'" :id="concert.id"></ButtonEdit>
-    <!--           <p>{{ getDate }}</p> -->
-    <!--     <b-button class="is-info is-light" @click="edit">Edit news</b-button>
-    <b-button class="is-danger is-light" @click="deleteItem">Delete</b-button> -->
+    <p>Date : {{ getDate }}</p>
+    <div class="concerts-buttons">
+      <Button :button="'edit'" :type="'concerts'" :id="concert.id"></Button>
+      <Button
+        :button="'delete'"
+        :module="'concerts'"
+        :type="'concert'"
+        :id="concert.id"
+      ></Button>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
-import ButtonEdit from "@/components/buttons/ButtonEdit";
+import Button from "@/components/buttons/Button";
 
 export default {
   components: {
-    ButtonEdit,
+    Button,
   },
   data() {
     return {
@@ -51,3 +56,14 @@ export default {
   },
 };
 </script>
+
+<style>
+  .concerts-buttons{
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .concerts-buttons button:nth-child(1) {
+    margin-right: 20px;
+  }
+</style>

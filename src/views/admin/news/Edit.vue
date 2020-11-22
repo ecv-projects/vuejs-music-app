@@ -1,6 +1,5 @@
 <template>
   <div class="container-admin">
-
     <b-field label="Title">
       <b-input type="text" v-model="news.title"></b-input>
     </b-field>
@@ -23,18 +22,39 @@
         v-model="news.content"
       ></b-input>
     </b-field>
-    <b-button class="is-success" @click="save">Save</b-button>
-    <b-button class="is-danger" @click="cancel">Annuler</b-button>
+    <Button
+      :button="'save'"
+      :type="'news'"
+      :module="'news'"
+      :id="news.id"
+      :payload="{
+        id: this.news.id,
+        content: this.news.content,
+        image: this.news.image,
+        published: this.dateEdit,
+        title: this.news.title,
+      }"
+    ></Button>
+    <Button
+      :button="'cancel'"
+      :type="'news'"
+      :module="'news'"
+      :id="news.id"
+    ></Button>
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
+import Button from "@/components/buttons/Button";
 
 export default {
+  components: {
+    Button,
+  },
   data() {
     return {
-      dateEdit: Date,
+      dateEdit: Date
     };
   },
   computed: {
@@ -53,36 +73,10 @@ export default {
   methods: {
     ...mapActions({
       fetchNews: "news/fetchNews",
-      editNews: "news/editNews",
-    }),
-    save() {
-      console.log(this.news);
-      console.log({
-        id: this.news.id,
-        content: this.news.content,
-        image: this.news.image,
-        published: this.dateEdit,
-        title: this.news.title,
-      });
-      this.editNews({
-        id: this.news.id,
-        content: this.news.content,
-        image: this.news.image,
-        published: this.dateEdit,
-        title: this.news.title,
-      });
-      this.$router.push({ name: "admin.news.index" });
-    },
-    cancel() {
-      this.$router.push({
-        name: "admin.news.show",
-        params: { id: this.news.id },
-      });
-    },
+    })
   },
   mounted() {
     this.fetchNews(this.$route.params.id);
-    console.log(this.dateEdit);
   },
 };
 </script>
