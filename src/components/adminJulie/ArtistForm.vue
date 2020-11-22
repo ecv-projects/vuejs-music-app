@@ -335,7 +335,7 @@
         };
         console.log(newArtist);
         this.createArtist(newArtist);
-        this.$emit('refresh');
+        this.$emit('add-artist');
         this.$emit('close');
       }
     },

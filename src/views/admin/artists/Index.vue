@@ -14,7 +14,10 @@
               :destroy-on-hide="false"
               aria-role="dialog"
               aria-modal>
-                <ArtistForm v-on:close="isComponentModalActive = false"/>
+                <ArtistForm 
+                v-on:close="isComponentModalActive = false"
+                v-on:add-artist="addThisArtist()"
+                />
           </b-modal>
         </section>
         <ul class="admin-content--artists__list">
@@ -56,14 +59,18 @@ export default {
       fetchAllArtists: 'artists/fetchAllArtists',
       deleteArtist: 'artists/deleteArtist'
     }),
+    addThisArtist() {
+      this.artists.push(this.artist);
+      this.fetchAllArtists();
+    },
     editThisArtist: function(index, id) {
       this.artists[index] = this.artist;
       this.editArtist(id);
     },
-      deleteThisArtist: function(index, id) {
-      this.artists.splice(index, 1);
-      this.deleteArtist(id);
-    }
+    deleteThisArtist: function(index, id) {
+    this.artists.splice(index, 1);
+    this.deleteArtist(id);
+  }
   },
   computed: {
     ...mapState({
