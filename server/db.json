@@ -34,20 +34,6 @@
       "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/01/03a0c59d-5dea-42ea-8ecc-5bd41502fb2a/336x224_jl-murat-2924a-print.webp",
       "content": "A la fois doux et orageux, ce clip à double facettes s'est voulu avant tout : DADA. De ce fait, pour illustrer les deux nouveaux titres contrastés de Jean Louis Murat, Kelzang Ravach, cinéaste, animateur, collagiste et co-fondateur de Temple Caché, a souhaité tisser une histoire plus sensorielle que narrative",
       "id": 5
-    },
-    {
-      "title": "Test news",
-      "published": "2020-11-19T14:29:34.873Z",
-      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/09/00e3bd3f-66be-4817-8b2b-374ae6a5f7f6/336x224_000_1d73se.webp",
-      "content": "content",
-      "id": 6
-    },
-    {
-      "title": "Test new news",
-      "published": "2020-11-19T14:31:05.059Z",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMzu01IgND9-Mxg22GJGA4gL-Ty3kF8BcxjQ&usqp=CAU",
-      "content": "content",
-      "id": 7
     }
   ],
   "genres": [
@@ -147,32 +133,38 @@
     {
       "id": 1,
       "name": "Paris Bercy",
-      "date": "10/12/2019",
+      "date": "2020-12-10T23:00:00.000Z",
       "artistId": 3
     },
     {
       "id": 2,
       "name": "Olympia",
-      "date": "10/12/2018",
+      "date": "2018-08-10T23:00:00.000Z",
       "artistId": 3
     },
     {
       "id": 3,
       "name": "O2 Academy Manchester",
-      "date": "10/12/2018",
+      "date": "2020-08-16T23:00:00.000Z",
       "artistId": 2
     },
     {
       "name": "Olympia",
       "date": "2020-11-26T23:00:00.000Z",
-      "artist": 1,
+      "artistId": 1,
       "id": 4
     },
     {
       "name": "Grand Rex",
       "date": "2021-11-08T23:00:00.000Z",
-      "artist": 3,
+      "artistId": 3,
       "id": 5
+    },
+    {
+      "name": "Point Virgule",
+      "date": "2020-12-23T23:00:00.000Z",
+      "artistId": 2,
+      "id": 6
     }
   ]
 }

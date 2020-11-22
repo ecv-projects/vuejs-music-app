@@ -53,7 +53,7 @@ export default {
       const payload = {
         name: this.name,
         date: this.date,
-        artist: this.artist,
+        artistId: this.artist,
       };
       this.createConcert(payload);
       this.$router.push({ name: "admin.concerts.index" });

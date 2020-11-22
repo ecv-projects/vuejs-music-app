@@ -7,30 +7,26 @@
     <p>{{ getDate }}</p>
     <img :src="news.image" alt="news.title" />
     <p>{{ news.content }}</p>
-    <b-button class="is-info is-light" @click="edit">Edit news</b-button>
-    <b-button class="is-danger is-light" @click="deleteItem">Delete</b-button>
+    <ButtonEdit :type="'news'" :id="news.id"></ButtonEdit>
+    <ButtonDelete :type="'news'" :id="news.id"></ButtonDelete>
   </div>
 </template>
 
 <script>
 import { mapActions, mapState } from "vuex";
+import ButtonEdit from '@/components/buttons/ButtonEdit';
+import ButtonDelete from '@/components/buttons/ButtonDelete';
+
 
 export default {
+  components: {
+    ButtonEdit,
+    ButtonDelete
+  },
   methods: {
     ...mapActions({
       fetchNews: "news/fetchNews",
-      deleteNews: "news/deleteNews",
     }),
-    edit() {
-      this.$router.push({
-        name: "admin.news.edit",
-        params: { id: this.news.id },
-      });
-    },
-    deleteItem() {
-      this.deleteNews(this.$route.params.id);
-      this.$router.push({ name: "admin.news.index" });
-    },
   },
   computed: {
     ...mapState({

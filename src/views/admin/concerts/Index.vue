@@ -10,7 +10,7 @@
             <router-link :to="{ name: 'admin.concerts.show', params: { id: concert.id } }">
               <ConcertCard class="concerts-item"
                 :concert="concert"
-                :artist="getArtistByConcert(concert.artistId)"
+                :artist="getArtistByConcert(concert.artistId)" :artistUrl="'/admin/artists/'"
               ></ConcertCard>
             </router-link>
           </li>
@@ -31,9 +31,10 @@ export default {
   methods: {
     ...mapActions({
       fetchAllConcerts: "concerts/fetchAllConcerts",
+      fetchAllArtists: "artists/fetchAllArtists"
     }),
     getArtistByConcert(id) {
-      return this.concerts.find((artist) => {
+      return this.artists.find((artist) => {
         return artist.id === id;
       });
     },
@@ -46,11 +47,13 @@ export default {
   computed: {
     ...mapState({
       concerts: (state) => state.concerts.allConcerts,
+      artists: (state) => state.artists.allArtists
     }),
   },
   mounted() {
     console.log(this.concerts);
     this.fetchAllConcerts();
+    this.fetchAllArtists();
   },
 };
 </script>
