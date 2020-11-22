@@ -1,5 +1,5 @@
 <template>
-    <div v-on:refresh="this.fetchAllArtists();">
+    <div>
         <header>
           <div class="admin-content--artists__item__image">
               <figure class="image is-4by3">
@@ -14,11 +14,25 @@
               <p class="admin-content--artists__item__likes">{{ artist.likes }}<img src="../../assets/heart.svg"></p>
           </div>
           <b-button
-          @click="$emit('edit-artist')"
           type="is-info is-light"
           class="admin-content--artists__item__option admin-content--artists__item__option--edit"
-          >Edit</b-button
-          >
+            @click="isComponentModalActive = true">
+            Edit
+          </b-button>
+          <b-modal 
+            v-model="isComponentModalActive"
+            has-modal-card
+            trap-focus
+            :destroy-on-hide="false"
+            aria-role="dialog"
+            aria-modal>
+              <ArtistForm 
+              :artist="artist"
+              :edit="true" :add="false"
+              v-on:close="isComponentModalActive = false"
+              v-on:add-artist="addThisArtist()"
+              />
+          </b-modal>
           <b-button
           @click="$emit('delete-artist')"
           type="is-danger is-light"
@@ -31,12 +45,21 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
+import ArtistForm from "@/components/adminJulie/ArtistForm";
 
 export default {
   name: "ArtistCard",
   props: {
     artist: Object
   },
+  components: {
+    ArtistForm
+  },
+  data() {
+    return {
+        isComponentModalActive: false,
+    }
+},
   computed: {
     ...mapState({
       artists: state => state.artists.allArtists,

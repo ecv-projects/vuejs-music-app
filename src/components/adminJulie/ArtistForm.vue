@@ -2,7 +2,8 @@
   <form action="" id="modal-artist-form">
     <div class="modal-card" style="width: auto">
       <header class="modal-card-head">
-          <p class="modal-card-title">Add a new artist/group</p>
+          <p v-if="add" class="modal-card-title">Add a new artist/group</p>
+          <p v-if="edit" class="modal-card-title">Edit artist</p>
           <button
           type="button"
           class="delete"
@@ -17,6 +18,7 @@
           aria-required="true" 
           v-model="name"
           required/>
+          {{name}}
         </b-field>
         <b-field label="Avatar">
           <b-input 
@@ -287,17 +289,30 @@
           </b-select>
         </b-field>
         <b-field label="Description">
-          <b-input type="text"  name="description"  v-model="description"/>
+          <b-input type="text"  name="description" placeholder="Artist description"  v-model="description"/>
         </b-field>
       </section>
       <footer class="modal-card-foot">
         <b-button
+        v-if="add"
         @click="addArtist()"
         class="artist-add_button is-success"
         expanded
         >Save</b-button
         >
-        <button class="button" type="button" @click="$emit('close')">Close</button>
+        <b-button
+        v-if="edit"
+        @click="$emit('edit-artist')"
+        class="edit-add_button is-success"
+        expanded
+        >Edit</b-button
+        >
+        <button 
+        class="button" 
+        type="button" 
+        @click="$emit('close')">
+        Close
+        </button>
       </footer>
     </div>
   </form>
@@ -309,7 +324,9 @@
   export default {
     name: "ArtistForm",
     props: {
-      artist: Object
+      artist: Object,
+      add: false,
+      edit: false
     },
     data() {
       return {
@@ -333,10 +350,11 @@
           genreId: this.genreId, 
           description: this.description
         };
-        console.log(newArtist);
         this.createArtist(newArtist);
         this.$emit('add-artist');
         this.$emit('close');
+      },
+      editArtist() {
       }
     },
     mounted() {

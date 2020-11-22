@@ -15,6 +15,7 @@
               aria-role="dialog"
               aria-modal>
                 <ArtistForm 
+                :edit="false" :add="true"
                 v-on:close="isComponentModalActive = false"
                 v-on:add-artist="addThisArtist()"
                 />
@@ -26,6 +27,7 @@
             class="admin-content--artists__item" 
             :id="artist.id" v-for="(artist, index) in artists" 
             :key="artist.id"  
+            v-on:edit-artist="editThisArtist(index, artist.id)"
             v-on:delete-artist="deleteThisArtist(index, artist.id)" 
             />
         </ul>
@@ -57,20 +59,21 @@ export default {
   methods: {
     ...mapActions({
       fetchAllArtists: 'artists/fetchAllArtists',
-      deleteArtist: 'artists/deleteArtist'
+      deleteArtist: 'artists/deleteArtist',
+      editArtist: 'artists/editArtist'
     }),
     addThisArtist() {
       this.artists.push(this.artist);
       this.fetchAllArtists();
     },
-    editThisArtist: function(index, id) {
-      this.artists[index] = this.artist;
+    editThisArtist(index, id) {
+      console.log('fsfsd');
       this.editArtist(id);
     },
     deleteThisArtist: function(index, id) {
-    this.artists.splice(index, 1);
-    this.deleteArtist(id);
-  }
+      this.artists.splice(index, 1);
+      this.deleteArtist(id);
+    }
   },
   computed: {
     ...mapState({

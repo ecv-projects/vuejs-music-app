@@ -32,6 +32,7 @@ module.exports = {
     'no-unused-expressions' : 0,
     'key-spacing' : 0,
     'space-in-parens' : 0,
-    'no-labels' : 0
+    'no-labels' : 0,
+    'vue/require-prop-type-constructor' : 0
   }
 }
