@@ -26,12 +26,11 @@
             :destroy-on-hide="false"
             aria-role="dialog"
             aria-modal>
-              <ArtistForm 
+            <ArtistItemEdit
               :artist="artist"
               :edit="true" :add="false"
               v-on:close="isComponentModalActive = false"
-              v-on:add-artist="addThisArtist()"
-              />
+            />
           </b-modal>
           <b-button
           @click="$emit('delete-artist')"
@@ -45,7 +44,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import ArtistForm from "@/components/adminJulie/ArtistForm";
+import ArtistItemEdit from "@/components/adminJulie/ArtistItemEdit";
 
 export default {
   name: "ArtistCard",
@@ -53,7 +52,7 @@ export default {
     artist: Object
   },
   components: {
-    ArtistForm
+    ArtistItemEdit
   },
   data() {
     return {

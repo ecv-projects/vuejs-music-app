@@ -49,11 +49,11 @@ export default {
   },
   data() {
     return {
-        isComponentModalActive: false,
-        formProps: {
-            email: 'evan@you.com',
-            password: 'testing'
-        }
+      isComponentModalActive: false,
+      formProps: {
+          email: 'evan@you.com',
+          password: 'testing'
+      }
     }
 },
   methods: {
@@ -68,7 +68,7 @@ export default {
     },
     editThisArtist(index, id) {
       console.log('fsfsd');
-      this.editArtist(id);
+      this.artists(id).patch(this.artist);
     },
     deleteThisArtist: function(index, id) {
       this.artists.splice(index, 1);

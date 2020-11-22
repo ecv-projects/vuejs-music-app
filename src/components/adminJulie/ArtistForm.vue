@@ -18,7 +18,6 @@
           aria-required="true" 
           v-model="name"
           required/>
-          {{name}}
         </b-field>
         <b-field label="Avatar">
           <b-input 
@@ -302,7 +301,7 @@
         >
         <b-button
         v-if="edit"
-        @click="$emit('edit-artist')"
+        @click="updateArtist()"
         class="edit-add_button is-success"
         expanded
         >Edit</b-button
@@ -341,6 +340,7 @@
     methods: {
       ...mapActions({
         createArtist: 'artists/createArtist',
+        editArtist: 'artists/editArtist'
     }),
       addArtist() {
         const newArtist = {
@@ -354,7 +354,15 @@
         this.$emit('add-artist');
         this.$emit('close');
       },
-      editArtist() {
+      updateArtist() {
+        const updateArtist = {
+        name: this.name, 
+        avatar: this.avatar,
+        origin: this.origin, 
+        genreId: this.genreId, 
+        description: this.description
+        };
+        this.editArtist(updateArtist);
       }
     },
     mounted() {
