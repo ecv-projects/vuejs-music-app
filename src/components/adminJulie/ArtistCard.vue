@@ -23,7 +23,6 @@
           @click="$emit('delete-artist')"
           type="is-danger is-light"
           class=" admin-content--artists__item__option admin-content--artists__item__option--delete"
-          :index="index"
           :id="artist.id"
           >Delete</b-button
           >

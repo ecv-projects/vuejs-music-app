@@ -1,13 +1,41 @@
 <template>
-  <div>
-    <b-field label="Name">
-      <b-input v-model="artist.name" type="text" />
-    </b-field>
-    <b-field label="Avatar">
-      <b-input v-model="artist.avatar" type="url" />
-    </b-field>
-    <b-field label="Country">
-        <b-select placeholder="Select a country" required>
+  <form action="" >
+    <div class="modal-card" style="width: auto">
+      <header class="modal-card-head">
+          <p class="modal-card-title">Add a new artist/group</p>
+          <button
+          type="button"
+          class="delete"
+          @click="$emit('close')"/>
+      </header>
+      <section class="modal-card-body">
+        <b-field label="Name">
+          <b-input  
+          type="text" 
+          :value="name"
+          placeholder="Name"
+          aria-required="true" required/>
+        </b-field>
+        <b-field label="Avatar" class="file is-primary" :class="{'has-name': !!file}">
+            <b-upload v-model="file" class="file-label" >
+                <div class="file-cta">
+                    <b-icon class="file-icon" icon="upload"></b-icon>
+                    <span class="file-label">Click to upload</span>
+                </div>
+                <span class="file-name" v-if="file">
+                    {{ file.name }}
+                </span>
+            </b-upload>
+        </b-field>
+        <b-field label="Or URL Avatar">
+          <b-input 
+          type="url" 
+          :value="avatar"
+          placeholder="URL avatar"
+          />
+        </b-field>
+        <b-field label="Country">
+          <b-select placeholder="Select a country" required>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
             <option value="Albania">Albania</option>
@@ -252,50 +280,79 @@
             <option value="Yemen">Yemen</option>
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
-        </b-select>
-    </b-field>
-    <b-field label="Genre">
-        <b-select placeholder="Select a genre" required>
-            <option value="rock">Rock</option>
-            <option value="metal">Metal</option>
-            <option value="rap">Rap</option>
-            <option value="classical">Classical</option>
-            <option value="electro">Electro</option>
-            <option value="rnb">Rnb</option>
-            <option value="alternative">Alternative</option>
-            <option value="jazz">Jazz</option>
-        </b-select>
-    </b-field>
-    <b-field label="Description">
-      <b-input v-model="artist.description" type="text" />
-    </b-field>
-    <b-button
-      v-if="add"
-      @click="addArtist"
-      class="artist-add_button is-success"
-      expanded
-      >Add</b-button
-    >
-    <b-button v-if="edit" @click="saveArtist" class="is-success" expanded
-      >Save</b-button
-    >
-  </div>
+          </b-select>
+        </b-field>
+        <b-field label="Genre">
+          <b-select placeholder="Select a genre" required>
+            <option value="1">Rock</option>
+            <option value="2">Metal</option>
+            <option value="3">Rap</option>
+            <option value="4">Classical</option>
+            <option value="5">Electro</option>
+            <option value="6">Rnb</option>
+            <option value="7">Alternative</option>
+            <option value="8">Jazz</option>
+          </b-select>
+        </b-field>
+        <b-field label="Description">
+          <b-input type="text" />
+        </b-field>
+
+
+
+      </section>
+      <footer class="modal-card-foot">
+        <b-button
+        @click="addArtist()"
+        class="artist-add_button is-success"
+        expanded
+        >Save</b-button
+        >
+        <button class="button" type="button" @click="$emit('close')">Close</button>
+      </footer>
+    </div>
+  </form>
 </template>
 
-<script>
-export default {
-  name: "ArtistForm",
-  props: {
-    artist: Object,
-    add: false,
-    edit: false
-  },
-  data() {
-  },
-  methods: {
 
-  },
-  mounted() {
+ 
+
+<script>
+  export default {
+    name: "ArtistForm",
+    props: {
+      artist: Object
+    },
+    data() {
+      return {
+        file: null
+      }
+    },
+    methods: {
+      addArtist() {
+        console.log('new artist created')
+      },
+      closeModal() {
+        console.log('close modal');
+      }
+    },
+    mounted() {
+    },
   }
-};
 </script>
+
+<style scoped>
+.file {
+  flex-wrap: wrap;
+}
+.field label {
+  width: 100%;
+}
+
+.button.is-fullwidth {
+  width: auto;
+}
+
+</style>>
+
+

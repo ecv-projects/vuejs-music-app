@@ -2,15 +2,23 @@
     <div class="container-admin">
       <div class="admin-content admin-content--artists">
         <h1>All artists</h1>
-        <b-button
-        type="is-success"
-        class="admin-content--artists__item__option admin-content--artists__item__option--create"
-        >Add artist</b-button
-        >
+        <section>
+          <button class="button is-primary is-medium"
+              @click="isComponentModalActive = true">
+              Add artist
+          </button>
+          <b-modal 
+              v-model="isComponentModalActive"
+              has-modal-card
+              trap-focus
+              :destroy-on-hide="false"
+              aria-role="dialog"
+              aria-modal>
+                <ArtistForm v-on:close="isComponentModalActive = false"/>
+          </b-modal>
+        </section>
         <ul class="admin-content--artists__list">
-          <div >
-            <ArtistCard  :artist="artist" class="testttttttt" :id="artist.id" v-for="(artist, index) in artists" :key="artist.id" v-on:edit-artist="editThisArtist(artists.indexOf(artist), artist.id)" v-on:delete-artist="deleteThisArtist(index, artist.id)"></ArtistCard>
-          </div>
+            <ArtistCard  :artist="artist" class="admin-content--artists__item" :id="artist.id" v-for="(artist, index) in artists" :key="artist.id" v-on:edit-artist="editThisArtist(artists.indexOf(artist), artist.id)" v-on:delete-artist="deleteThisArtist(index, artist.id)"></ArtistCard>
         </ul>
       </div>
     </div>
@@ -21,11 +29,22 @@ import { mapActions, mapState } from 'vuex'
 import ArtistCard from "@/components/adminJulie/ArtistCard";
 import ArtistForm from "@/components/adminJulie/ArtistForm";
 
+
 export default {
   name: "AdminArtists",
   components: {
-    ArtistCard
+    ArtistCard,
+    ArtistForm
   },
+  data() {
+    return {
+        isComponentModalActive: false,
+        formProps: {
+            email: 'evan@you.com',
+            password: 'testing'
+        }
+    }
+},
   methods: {
     ...mapActions({
       fetchAllArtists: 'artists/fetchAllArtists',
