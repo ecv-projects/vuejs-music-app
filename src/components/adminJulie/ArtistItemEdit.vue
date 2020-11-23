@@ -339,7 +339,8 @@
     },
     methods: {
       ...mapActions({
-        editArtist: 'artists/editArtist' 
+        editArtist: 'artists/editArtist',
+        fetchAllArtists: 'artists/fetchAllArtists' 
       }),
       updateArtist() {
         console.log('toto');
@@ -351,14 +352,19 @@
         genreId: this.genreId, 
         description: this.description
         };
-        console.log(updateArtist);
         this.editArtist(updateArtist);
         this.$emit('edit-artist');
         this.$emit('close');
       }
     },
+    computed: {
+      ...mapState({
+        artists: state => state.artists.allArtists
+    })
+    },
     mounted() {
       this.editArtist();
+      this.fetchAllArtists();
     },
   }
 </script>

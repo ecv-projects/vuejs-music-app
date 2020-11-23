@@ -30,6 +30,7 @@
               :artist="artist"
               :edit="true" :add="false"
               v-on:close="isComponentModalActive = false"
+              v-on:edit-artist="editThisArtist(artist.id)"
             />
           </b-modal>
           <b-button
@@ -68,7 +69,13 @@ export default {
     ...mapActions({
       fetchAllArtists: 'artists/fetchAllArtists',
       deleteArtist: 'artists/deleteArtist'
-    })
+    }),
+    editThisArtist(id) {
+      const found = this.artists.find(element => element.id === id);
+      const index = (this.artists.indexOf(found));
+      this.artists.splice(index, 0, this.artist);
+      console.log('fsfsd');
+    },
   },
   mounted () {
     this.fetchAllArtists();

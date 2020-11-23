@@ -33,6 +33,7 @@ module.exports = {
     'key-spacing' : 0,
     'space-in-parens' : 0,
     'no-labels' : 0,
-    'vue/require-prop-type-constructor' : 0
+    'vue/require-prop-type-constructor' : 0,
+    'comma-spacing' : 0
   }
 }

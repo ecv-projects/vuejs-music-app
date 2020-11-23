@@ -27,7 +27,6 @@
             class="admin-content--artists__item" 
             :id="artist.id" v-for="(artist, index) in artists" 
             :key="artist.id"  
-            v-on:edit-artist="editThisArtist(index, artist.id)"
             v-on:delete-artist="deleteThisArtist(index, artist.id)" 
             />
         </ul>
@@ -47,13 +46,12 @@ export default {
     ArtistCard,
     ArtistForm
   },
+  props: {
+    artist: Object
+  },
   data() {
     return {
       isComponentModalActive: false,
-      formProps: {
-          email: 'evan@you.com',
-          password: 'testing'
-      }
     }
 },
   methods: {
@@ -65,10 +63,6 @@ export default {
     addThisArtist() {
       this.artists.push(this.artist);
       this.fetchAllArtists();
-    },
-    editThisArtist(index, id) {
-      console.log('fsfsd');
-      this.artists(id).patch(this.artist);
     },
     deleteThisArtist: function(index, id) {
       this.artists.splice(index, 1);
