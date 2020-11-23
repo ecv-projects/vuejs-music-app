@@ -56,7 +56,7 @@ export default {
   },
   data() {
     return {
-        isComponentModalActive: false,
+      isComponentModalActive: false,
     }
 },
   computed: {
