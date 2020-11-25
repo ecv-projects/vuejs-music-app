@@ -1,12 +1,13 @@
 <template>
     <div class="container-admin">
       <div class="admin-content admin-content--artists">
-        <h1>All artists</h1>
+        <h2 class="title is-2">All artists</h2>
         <section>
-          <button class="button is-primary is-medium"
-              @click="isComponentModalActive = true">
-              Add artist
-          </button>
+          <b-button 
+          type="is-success is-light"
+          @click="isComponentModalActive = true">
+          Add artist
+          </b-button>
           <b-modal 
               v-model="isComponentModalActive"
               has-modal-card
@@ -81,6 +82,19 @@ export default {
 </script>
 
 <style>
+
+body {
+  line-height: 1.5;
+}
+
+.button {
+  margin:10px;
+}
+
+.is-3 {
+  margin-bottom: 10px;
+}
+
 .admin-content--artists__list {
   display: flex;
   flex-wrap: wrap;

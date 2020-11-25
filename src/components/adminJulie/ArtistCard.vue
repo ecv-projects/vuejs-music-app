@@ -6,7 +6,7 @@
               <img :src="artist.avatar" :alt="artist.name" />
               </figure>
           </div>
-            <p class="admin-content--artists__item__title title is-4">{{ artist.name }}</p>
+            <h2 class="admin-content--artists__item__title title is-3">{{ artist.name }}</h2>
         </header>
           <div class="admin-content--artists__item__content">
               <p>{{ artist.origin }}</p>
