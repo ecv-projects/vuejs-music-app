@@ -10,10 +10,12 @@
                     :key="item.id"
                     >
                         <router-link
-                        :to="{name: '', params: {id: item.id}}"
+                        :to="{name: 'admin.albums.show', params: {id: item.id}}"
                         >
                             {{ item.name }}
                         </router-link>
+                        <b-button size="is-small" type="is-dark" @click="editAlbum(item.id)">Edit album {{ item.id }}</b-button>
+                        <b-button size="is-small" type="is-danger" @click="deleteAlbum(item.id)">Delete album</b-button>
                     </li>
                 </ul>
             </div>
@@ -27,8 +29,16 @@ import { mapActions, mapState } from 'vuex'
 export default {
   methods: {
     ...mapActions({
-      fetchAllAlbums: 'albums/fetchAllAlbums'
-    })
+      fetchAllAlbums: 'albums/fetchAllAlbums',
+      deleteAlbum: 'albums/deleteAlbum',
+    }),
+    editAlbum(id) {
+      this.$router.push({ name: 'admin.albums.edit', params: { id: id } })
+    },
+    deleteAlbum(id) {
+      this.deleteAlbum(id)
+      this.$router.push({ name: 'admin.albums.index' })
+    }
   },
   computed: {
     ...mapState({

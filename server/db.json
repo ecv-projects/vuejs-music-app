@@ -70,6 +70,43 @@
       "name": "jazz"
     }
   ],
+<<<<<<< HEAD
+=======
+  "genres": [
+    {
+      "id": 1,
+      "name": "rock"
+    },
+    {
+      "id": 2,
+      "name": "metal"
+    },
+    {
+      "id": 3,
+      "name": "rap"
+    },
+    {
+      "id": 4,
+      "name": "classical"
+    },
+    {
+      "id": 5,
+      "name": "electro"
+    },
+    {
+      "id": 6,
+      "name": "rnb"
+    },
+    {
+      "id": 7,
+      "name": "alternative"
+    },
+    {
+      "id": 8,
+      "name": "jazz"
+    }
+  ],
+>>>>>>> feature/admin-home-crud-albums
   "artists": [
     {
       "id": 1,
@@ -108,17 +145,10 @@
   ],
   "albums": [
     {
-      "id": 1,
-      "name": "QALF",
-      "released": 2020,
-      "tracks": 15,
-      "artistId": 3
-    },
-    {
       "id": 2,
       "name": "Geography",
       "released": 2018,
-      "tracks": 13,
+      "tracks": "15",
       "artistId": 2
 <<<<<<< HEAD
     },
