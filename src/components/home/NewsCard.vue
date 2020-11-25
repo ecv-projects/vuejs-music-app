@@ -1,6 +1,5 @@
 <template>
   <div>
-    <router-link :to="{ path: `/news/${news.id}` }">
       <div class="box">
         <article class="media">
           <div class="media-left">
@@ -20,7 +19,6 @@
           </div>
         </article>
       </div>
-    </router-link>
   </div>
 </template>
 

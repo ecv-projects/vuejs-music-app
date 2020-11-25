@@ -1,0 +1,151 @@
+{
+  "users": [
+    {
+      "email": "toto@example.com",
+      "password": "$2a$10$dXNszRnkYBxyRPwYHgIfxeOD0/IBDbkI2aXpj1qXrMwvoVKPXa1Vq",
+      "id": 1
+    }
+  ],
+  "news": [
+    {
+      "id": 4,
+      "title": "Le chanteur de Nada Surf jouera deux fois à cause du coronavirus : 'Annuler, c'était trop triste'",
+      "published": "2020-10-03T13:23:10.547Z",
+      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/03/28902b3e-76d6-405e-988c-ad7a06243efa/336x224_000_1mt0g6nadasurf.webp",
+      "content": "Le groupe américain préfère jouer deux fois pour éviter d'avoir à annuler son concert à la Cigale à Paris, contournant ainsi l'interdiction de jouer dans une salle de plus de mille spectateurs. C'est l'idée originale du groupe de rock et elle fait des émules."
+    },
+    {
+      "title": "Découvrez le nouveau clip de Jean Louis Murat « Si je m'attendais / Troie »  !",
+      "published": "2020-11-22T17:41:53.863Z",
+      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/01/03a0c59d-5dea-42ea-8ecc-5bd41502fb2a/336x224_jl-murat-2924a-print.webp",
+      "content": "A la fois doux et orageux, ce clip à double facettes s'est voulu avant tout : DADA. De ce fait, pour illustrer les deux nouveaux titres contrastés de Jean Louis Murat, Kelzang Ravach, cinéaste, animateur, collagiste et co-fondateur de Temple Caché, a souhaité tisser une histoire plus sensorielle que narrative",
+      "id": 5
+    },
+    {
+      "title": "test",
+      "published": "2020-11-22T23:00:00.000Z",
+      "image": "",
+      "content": "gfhfghgf",
+      "id": 6
+    }
+  ],
+  "genres": [
+    {
+      "id": 1,
+      "name": "rock"
+    },
+    {
+      "id": 2,
+      "name": "metal"
+    },
+    {
+      "id": 3,
+      "name": "rap"
+    },
+    {
+      "id": 4,
+      "name": "classical"
+    },
+    {
+      "id": 5,
+      "name": "electro"
+    },
+    {
+      "id": 6,
+      "name": "rnb"
+    },
+    {
+      "id": 7,
+      "name": "alternative"
+    },
+    {
+      "id": 8,
+      "name": "jazz"
+    }
+  ],
+  "artists": [
+    {
+      "id": 1,
+      "name": "Coldplay",
+      "country": "Great Britain",
+      "avatar": "https://upload.wikimedia.org/wikipedia/en/1/1d/Coldplay_shot_by_Marcus_Haney_01.png",
+      "genreId": 1,
+      "likes": 100310,
+      "description": "Il est formé par l'auteur-compositeur-interprète Chris Martin et le guitariste Jon Buckland. Le bassiste Guy Berryman rejoint ensuite le groupe, avant que le batteur Will Champion ne vienne compléter le quatuor."
+    },
+    {
+      "id": 2,
+      "name": "Tom misch",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Tom_Misch%2C_The_Novo%2C_April_2018_%28cropped%29.jpg/800px-Tom_Misch%2C_The_Novo%2C_April_2018_%28cropped%29.jpg",
+      "origin": "Great Britan",
+      "genreId": 8,
+      "likes": 1024,
+      "description": "Thomas Abraham Misch (born 25 June 1995) is an English musician and producer. He began releasing music on SoundCloud in 2012 and released his debut studio album Geography in 2018"
+    },
+    {
+      "id": 3,
+      "name": "Damso",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Festival_des_Vieilles_Charrues_2018_-_Damso_-_006.jpg/800px-Festival_des_Vieilles_Charrues_2018_-_Damso_-_006.jpg",
+      "origin": "Belgique",
+      "genreId": 3,
+      "likes": 20420,
+      "description": "Damso, de son vrai nom William Kalubi Mwamba, né le 10 mai 1992 à Kinshasa (Zaïre, actuelle République démocratique du Congo), est un rappeur et auteur-compositeur-interprète belgo-congolais."
+    }
+  ],
+  "albums": [
+    {
+      "id": 1,
+      "name": "QALF",
+      "released": 2020,
+      "tracks": 15,
+      "artistId": 3
+    },
+    {
+      "id": 2,
+      "name": "Geography",
+      "released": 2018,
+      "tracks": 13,
+      "artistId": 2
+    },
+    {
+      "id": 3,
+      "name": "Viva la Vida or Death and All His Friends",
+      "released": 2008,
+      "tracks": 10,
+      "artistId": 1
+    },
+    {
+      "id": 4,
+      "name": "A Head Full of Dreams",
+      "released": 2015,
+      "tracks": 11,
+      "artistId": 1
+    }
+  ],
+  "concerts": [
+    {
+      "id": 1,
+      "name": "Paris Bercy",
+      "date": "2020-12-10T23:00:00.000Z",
+      "artistId": 3
+    },
+    {
+      "id": 2,
+      "name": "Olympia",
+      "date": "2018-08-10T23:00:00.000Z",
+      "artistId": 3
+    },
+    {
+      "id": 3,
+      "name": "O2 Academy Manchester",
+      "date": "2020-08-16T23:00:00.000Z",
+      "artistId": 2
+    },
+    {
+      "name": "Olympia",
+      "date": "2020-11-26T23:00:00.000Z",
+      "artistId": 1,
+      "id": 4
+    }
+  ]
+}

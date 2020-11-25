@@ -33,7 +33,9 @@
       </div>
       <div class="news-container">
         <div v-for="news in getLastNews.slice(0, 3)" :key="news.id">
-          <NewsCard :news="news"></NewsCard>
+          <router-link :to="{ path: `/news/${news.id}` }">
+            <NewsCard :news="news"></NewsCard>
+          </router-link>
         </div>
       </div>
     </div>
@@ -106,7 +108,8 @@ export default {
   justify-content: space-between;
 }
 
-.news .news-header, .artists .artists-header {
+.news .news-header,
+.artists .artists-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
