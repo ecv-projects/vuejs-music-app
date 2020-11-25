@@ -94,17 +94,10 @@
   ],
   "albums": [
     {
-      "id": 1,
-      "name": "QALF",
-      "released": 2020,
-      "tracks": 15,
-      "artistId": 3
-    },
-    {
       "id": 2,
       "name": "Geography",
       "released": 2018,
-      "tracks": 13,
+      "tracks": "15",
       "artistId": 2
     },
     {
