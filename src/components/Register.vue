@@ -1,6 +1,16 @@
 <template>
   <div>
     <h1> Register </h1>
+    <label>Nom</label>
+    <input
+      type="text"
+      v-model="name"
+    />
+    <label>Prénom</label>
+    <input
+      type="text"
+      v-model="lastname"
+    />
     <label>Email</label>
     <input
       type="text"
@@ -26,6 +36,8 @@ export default {
     return {
       email: '',
       password: '',
+      name: '',
+      lastname: '',
       error: null
     }
   },
@@ -33,7 +45,10 @@ export default {
     submit () {
       axios.post('http://localhost:3000/register', {
         email: this.email,
-        password: this.password
+        password: this.password,
+        name: this.name,
+        lastname: this.lastname,
+
       })
         .then(res => {
           localStorage.setItem('token', res.data.accessToken)

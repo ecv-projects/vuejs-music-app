@@ -20,19 +20,8 @@
         <b-navbar-item tag="router-link" :to="{ name: 'register' }">
           Register
         </b-navbar-item>
-        <b-button @click="logout"> Logout </b-button>
       </template>
     </b-navbar>
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    logout() {
-      localStorage.removeItem("token");
-      this.$router.push({ name: "login" });
-    },
-  },
-};
-</script>

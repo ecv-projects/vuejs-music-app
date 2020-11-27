@@ -15,10 +15,13 @@
 
 <script>
 import Navbar from "@/components/Navbar";
+import { mapState, mapActions } from "vuex";
+import jwt_decode from "jwt-decode";
+import axios from "axios";
 
 export default {
   components: {
     Navbar,
-  },
+  }
 };
 </script>

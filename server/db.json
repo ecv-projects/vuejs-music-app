@@ -1,9 +1,18 @@
 {
   "users": [
     {
-      "email": "toto@example.com",
-      "password": "$2a$10$dXNszRnkYBxyRPwYHgIfxeOD0/IBDbkI2aXpj1qXrMwvoVKPXa1Vq",
-      "id": 1
+      "email": "juliette@gmail.com",
+      "password": "$2a$10$uqTApfNx3Tvd5vlTIJgcPehOK9/Kp2UQLrcCNyz7RmLZkjFyLOaqq",
+      "name": "Juliette",
+      "lastname" : "Connan",
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "email": "alice@gmail.com",
+      "password": "$2a$10$E3dUw3n.0uB10nwHYMPOmOaspjTCxZmv747efu1XEKujw56xj9Xoi",
+      "role": "user",
+      "id": 3
     }
   ],
   "news": [

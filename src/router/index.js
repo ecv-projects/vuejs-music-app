@@ -11,8 +11,26 @@ import adminNewsRoutes from '@/router/admin/news'
 import Main from '@/layouts/Main'
 import Admin from '@/layouts/Admin'
 import Index from '@/views/Index.vue'
+import Login from '@/components/Login.vue'
+import Register from '@/components/Register.vue'
+
 
 Vue.use(Router)
+
+
+const ifAuthenticated = (to, from, next) => {
+    if (localStorage.getItem('token')) {
+      next();
+      return;
+    }
+    router.push({ 
+      name: 'login',
+      params: {
+        returnTo: to.path,
+        query: to.query,
+      },
+    });
+   };
 
 const router = new Router({
     mode: 'history',
@@ -31,6 +49,7 @@ const router = new Router({
     }, {
         component: Admin,
         path: '/admin',
+        beforeEnter: ifAuthenticated,
         children: [{
             path: '/admin',
             name: 'admin.index',
@@ -41,21 +60,17 @@ const router = new Router({
             ...adminConcertsRoutes,
             ...adminNewsRoutes
         ]
+    }, {
+        path: '/login',
+        name: 'login',
+        component: Login
+    }, {
+        path: '/register',
+        name: 'register',
+        component: Register
     }]
 })
 
-router.beforeEach(async (to, from, next) => {
-    if (to.matched.some(route => route.meta.auth)) {
-        try {
-            await userApi.verifyUser()
-            return next()
-        } catch (e) {
-            localStorage.removeItem('token')
-            return next('/login')
-        }
-    } else {
-        return next()
-    }
-})
+
 
 export default router

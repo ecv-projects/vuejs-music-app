@@ -1,48 +1,44 @@
 <template>
   <div>
-    <h1> Login </h1>
+    <h1>Login</h1>
     <label>Email</label>
-    <input
-      type="text"
-      v-model="email"
-    />
+    <input type="text" v-model="email" />
     <label>Password</label>
-    <input
-      type="password"
-      v-model="password"
-    />
-    <button @click="login">
-      Login
-    </button>
+    <input type="password" v-model="password" />
+    <button @click="login">Login</button>
     <p v-if="error">{{ error }}</p>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
+import apiUsers from "../api/users";
+
 
 export default {
-  data () {
+  data() {
     return {
-      email: '',
-      password: '',
-      error: null
-    }
+      email: "",
+      password: "",
+      error: null,
+    };
   },
+  computed: {},
   methods: {
-    login () {
-      axios.post('http://localhost:3000/login', {
-        email: this.email,
-        password: this.password
-      })
-        .then(res => {
-          localStorage.setItem('token', res.data.accessToken)
-          this.$router.push({ name: 'people' })
+    login() {
+      axios
+        .post("http://localhost:3000/login", {
+          email: this.email,
+          password: this.password,
         })
-        .catch(er => {
-          this.error = 'Une erreur est survenue'
+        .then((res) => {
+          localStorage.setItem("token", res.data.accessToken);
+          this.$router.push({ name: "index" });
         })
-    }
-  }
-}
+        .catch((er) => {
+          this.error = "Une erreur est survenue";
+        });
+    },
+  },
+};
 </script>

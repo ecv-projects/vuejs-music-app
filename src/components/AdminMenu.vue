@@ -7,12 +7,24 @@
                 <b-menu-item label="Concerts" icon="link" tag="router-link"  to="/admin/concerts"></b-menu-item>
                 <b-menu-item label="News" icon="link" tag="router-link"  to="/admin/news"></b-menu-item>
             </b-menu-list>
-            <b-menu-list label="Actions">
-                <b-menu-item label="Logout"></b-menu-item>
-            </b-menu-list>
+            <Profile :profile="profile"></Profile>
+            
         </b-menu>
     </div>
 </template>
+
+<script>
+import Profile from "@/components/Profile";
+
+export default {
+    props: [
+        'profile'
+    ],
+    components: {
+        Profile,
+    }
+}
+</script>
 
 <style>
 
