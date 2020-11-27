@@ -1,19 +1,24 @@
 <template>
   <div>
-    <h1>Login</h1>
-    <label>Email</label>
-    <input type="text" v-model="email" />
-    <label>Password</label>
-    <input type="password" v-model="password" />
-    <button @click="login">Login</button>
-    <p v-if="error">{{ error }}</p>
+    <Navbar />
+    <div  id="login">
+      <h1 class="title is-h1">Login</h1>
+      <b-field label="Email" v-model="email">
+        <b-input></b-input>
+      </b-field>
+      <b-field label="Mot de passe" v-model="password">
+        <b-input type="password"></b-input>
+      </b-field>
+      <b-button type="is-success" @click="login">Login</b-button>
+      <p v-if="error">{{ error }}</p>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import apiUsers from "../api/users";
-
+import Navbar from "@/components/Navbar";
 
 export default {
   data() {
@@ -23,7 +28,9 @@ export default {
       error: null,
     };
   },
-  computed: {},
+  components: {
+    Navbar,
+  },
   methods: {
     login() {
       axios
@@ -42,3 +49,10 @@ export default {
   },
 };
 </script>
+
+<style>
+#login {
+  max-width: 50%;
+  margin: 30px auto;
+}
+</style>
