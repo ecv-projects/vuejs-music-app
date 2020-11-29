@@ -15,6 +15,9 @@
               <h4 class="title is-4">
                 {{ news.title }}
               </h4>
+              <router-link :to="{ path: `/news/${news.id}` }">
+                Voir plus
+              </router-link>
             </div>
           </div>
         </article>
@@ -30,7 +33,7 @@ export default {
   },
   computed: {
       getDate() {
-          return Intl.DateTimeFormat('en-GB').format(new Date(this.news.published)) 
+          return Intl.DateTimeFormat('en-GB').format(new Date(this.news.published))
       }
   }
 };
