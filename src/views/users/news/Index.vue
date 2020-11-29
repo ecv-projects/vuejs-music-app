@@ -5,11 +5,7 @@
       v-for="item in news"
       :key="item.id"
       >
-    <router-link
-      :to="{name: 'news.show', params: {id: item.id}}"
-    >
-    {{ item.title }}
-    </router-link>
+     <NewsCard :news="item"></NewsCard>
     </li>
     </ul>
   </div>
@@ -17,8 +13,12 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
+import NewsCard from "@/components/home/NewsCard";
 
 export default {
+  components: {
+    NewsCard,
+  },
   methods: {
     ...mapActions({
       fetchManyNews: 'news/fetchManyNews'

@@ -124,6 +124,13 @@
       "released": 2015,
       "tracks": 11,
       "artistId": 1
+    },
+    {
+      "name": "Everyday Life",
+      "released": "2019",
+      "tracks": "11",
+      "artistId": 1,
+      "id": 6
     }
   ],
   "concerts": [

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-link :to="{ name: 'admin.albums.index' }">Back</router-link>
     <b-field label="Name album">
       <b-input v-model="album.name"></b-input>
     </b-field>
@@ -11,7 +12,7 @@
     <b-field label="Tracks">
       <b-input v-model="album.tracks"></b-input>
     </b-field>
-    <b-button size="is-small" type="is-dark" @click="saveAlbum"> Update album </b-button>
+    <b-button type="is-light" @click="saveAlbum"> Update</b-button>
   </div>
 </template>
 

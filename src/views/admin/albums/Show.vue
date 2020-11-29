@@ -1,17 +1,30 @@
 <template>
-  <div>
-    <h2> {{ album.name }} </h2>
+  <div class="container-admin">
+    <router-link :to="{ name: 'admin.albums.index' }">Back</router-link>
+    <h2 class="title is-3"> {{ album.name }} </h2>
+    <h2 class="title is-3"> {{ album.id }} </h2>
     <p> {{ album.released }} </p>
     <p> {{ album.tracks }} </p>
-    <b-button size="is-small" type="is-dark" @click="editAlbum">Edit album</b-button>
-    <b-button size="is-small" type="is-danger" @click="deleteAlbum">Delete album</b-button>
+    <div class="albums-buttons">
+      <b-button type="is-light" @click="editAlbum">Edit</b-button>
+        <Button
+          :button="'delete'"
+          :module="'albums'"
+          :type="'album'"
+          :id="album.id"
+        ></Button>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex';
+import Button from "@/components/buttons/Button";
 
 export default {
+  components: {
+    Button,
+  },
   methods: {
     ...mapActions({
       fetchAlbum: 'albums/fetchAlbum',
@@ -35,3 +48,14 @@ export default {
   }
 }
 </script>
+
+<style>
+  .albums-buttons{
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .albums-buttons button:nth-child(1) {
+    margin-right: 20px;
+  }
+</style>
