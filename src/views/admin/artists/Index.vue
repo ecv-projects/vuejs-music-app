@@ -37,8 +37,8 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import ArtistCard from "@/components/adminJulie/ArtistCard";
-import ArtistForm from "@/components/adminJulie/ArtistForm";
+import ArtistCard from "@/components/artist/ArtistCard";
+import ArtistForm from "@/components/artist/ArtistForm";
 
 
 export default {
