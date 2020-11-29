@@ -45,7 +45,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import ArtistItemEdit from "@/components/adminJulie/ArtistItemEdit";
+import ArtistItemEdit from "@/components/artist/ArtistItemEdit";
 
 export default {
   name: "ArtistCard",
