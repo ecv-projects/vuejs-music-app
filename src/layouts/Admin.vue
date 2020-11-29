@@ -42,7 +42,7 @@ export default {
     }),
   },
   methods: {
-    async verifyUser() {
+    verifyUser() {
       const { sub } = jwt_decode(localStorage.getItem("token"));
       const token = localStorage.getItem("token");
       axios
@@ -52,7 +52,11 @@ export default {
           },
         })
         .then((res) => {
-          this.profile = res.data;
+          if (res.data.role !== "admin") {
+            this.$router.push({ name: "login" });
+          } else {
+            this.profile = res.data;
+          }
         });
     },
   },

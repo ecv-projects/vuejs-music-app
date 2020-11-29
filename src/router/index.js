@@ -1,6 +1,5 @@
 import Router from 'vue-router'
 import Vue from 'vue'
-import userApi from '@/api/users'
 import newsRoutes from '@/router/users/news'
 import artistsRoutes from '@/router/users/artists'
 import adminAlbumsRoutes from '@/router/admin/albums'
@@ -14,13 +13,11 @@ import Index from '@/views/Index.vue'
 import Login from '@/components/Login.vue'
 import Register from '@/components/Register.vue'
 
-
 Vue.use(Router)
-
 
 const ifAuthenticated = (to, from, next) => {
     if (localStorage.getItem('token')) {
-      next();
+        next();
       return;
     }
     router.push({ 

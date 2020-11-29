@@ -1,34 +1,39 @@
 import axios from 'axios'
 
 const state = {
-    profile: {}
+  profile: null
 }
+
 
 const mutations = {
     SET_PROFILE(state, val) {
         state.profile = val
+    },
+    RESET_PROFILE(state) {
+       state.profile = null
     }
 }
-/* const actions = {
+const actions = {
+  resetProfile ({ commit }) {
+    commit('RESET_PROFILE')
+  },
     async fetchProfile({
       commit
-    }, token) {
-      const {
-        data
-      } = await axios.get('https://api.crc-ophta.vmedamplify.fr/api/v1/auth/profile', {
+    }, datas) {
+      console.log(datas);
+      const { data } = await axios.get(`http://localhost:3000/users/${datas.sub}`, {
         headers: {
-          'Authorization': `Bearer ${token}`
+          Authorization : `Bearer ${datas.token}`
         }
       })
       commit('SET_PROFILE', data)
     }
-  } */
+  }
 
 
 export default {
     namespaced: true,
     state,
     mutations,
-/*     actions
- */
+    actions
 }

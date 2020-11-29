@@ -1,13 +1,13 @@
 <template>
   <div>
     <Navbar />
-    <div  id="login">
+    <div id="login">
       <h1 class="title is-h1">Login</h1>
-      <b-field label="Email" v-model="email">
-        <b-input></b-input>
+      <b-field label="Email">
+        <b-input v-model="email"></b-input>
       </b-field>
-      <b-field label="Mot de passe" v-model="password">
-        <b-input type="password"></b-input>
+      <b-field label="Mot de passe">
+        <b-input v-model="password" type="password"></b-input>
       </b-field>
       <b-button type="is-success" @click="login">Login</b-button>
       <p v-if="error">{{ error }}</p>
@@ -40,6 +40,7 @@ export default {
         })
         .then((res) => {
           localStorage.setItem("token", res.data.accessToken);
+
           this.$router.push({ name: "index" });
         })
         .catch((er) => {

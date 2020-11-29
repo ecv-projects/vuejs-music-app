@@ -1,16 +1,18 @@
 {
   "users": [
     {
-      "email": "juliette@gmail.com",
+      "email": "admin@admin.com",
       "password": "$2a$10$uqTApfNx3Tvd5vlTIJgcPehOK9/Kp2UQLrcCNyz7RmLZkjFyLOaqq",
-      "name": "Juliette",
-      "lastname" : "Connan",
+      "name": "Michel",
+      "lastname": "Admin",
       "role": "admin",
       "id": 2
     },
     {
       "email": "alice@gmail.com",
-      "password": "$2a$10$E3dUw3n.0uB10nwHYMPOmOaspjTCxZmv747efu1XEKujw56xj9Xoi",
+      "password": "$2a$10$08RXAUqXk4hs2ZcCUob5Yu69tDg41CUATIIpAL7egqnhd2IMdIHS6",
+      "name": "Alice",
+      "lastname": "Mouchard",
       "role": "user",
       "id": 3
     }
