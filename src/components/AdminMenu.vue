@@ -1,7 +1,7 @@
 <template>
     <div class="admin-menu">
         <b-menu class="admin-menu-content">
-            <b-menu-list label="Edition menu">
+            <b-menu-list label="Admin edition menu">
                 <b-menu-item label="Albums" icon="link" tag="router-link"  to="/admin/albums"></b-menu-item>
                 <b-menu-item label="Artists" icon="link" tag="router-link"  to="/admin/artists"></b-menu-item>
                 <b-menu-item label="Concerts" icon="link" tag="router-link"  to="/admin/concerts"></b-menu-item>

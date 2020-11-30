@@ -4,7 +4,7 @@
         <h2 class="title is-2">All artists</h2>
         <section>
           <b-button 
-          type="is-success is-light"
+          type="is-info"
           @click="isComponentModalActive = true">
           Add artist
           </b-button>
@@ -37,8 +37,8 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import ArtistCard from "@/components/artist/ArtistCard";
-import ArtistForm from "@/components/artist/ArtistForm";
+import ArtistCard from "@/components/artistModals/ArtistCard";
+import ArtistForm from "@/components/artistModals/ArtistForm";
 
 
 export default {

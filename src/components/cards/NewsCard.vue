@@ -15,9 +15,7 @@
               <h4 class="title is-4">
                 {{ news.title }}
               </h4>
-              <router-link :to="{ path: `/news/${news.id}` }">
-                Voir plus
-              </router-link>
+
             </div>
           </div>
         </article>
@@ -40,8 +38,8 @@ export default {
 </script>
 
 <style>
-.news-container .media .image img {
-  max-width: 230px;
+.box .media .image img {
+  max-width: 330px;
 }
 
 .news-container .box {

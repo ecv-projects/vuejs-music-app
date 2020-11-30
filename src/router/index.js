@@ -6,6 +6,7 @@ import adminAlbumsRoutes from '@/router/admin/albums'
 import adminArtistsRoutes from '@/router/admin/artists'
 import adminConcertsRoutes from '@/router/admin/concerts'
 import adminNewsRoutes from '@/router/admin/news'
+import jwt_decode from "jwt-decode";
 
 import Main from '@/layouts/Main'
 import Admin from '@/layouts/Admin'
@@ -16,18 +17,31 @@ import Register from '@/components/Register.vue'
 Vue.use(Router)
 
 const ifAuthenticated = (to, from, next) => {
+    const todayDate = Date.now()
+
     if (localStorage.getItem('token')) {
+        const expToken = jwt_decode(localStorage.getItem("token")).exp * 1000
+        if (todayDate > expToken) {
+            localStorage.removeItem('token')
+            router.push({
+                name: 'login',
+                params: {
+                    returnTo: to.path,
+                    query: to.query,
+                },
+            });
+        }
         next();
-      return;
+        return;
     }
-    router.push({ 
-      name: 'login',
-      params: {
-        returnTo: to.path,
-        query: to.query,
-      },
+    router.push({
+        name: 'login',
+        params: {
+            returnTo: to.path,
+            query: to.query,
+        },
     });
-   };
+};
 
 const router = new Router({
     mode: 'history',
@@ -48,9 +62,9 @@ const router = new Router({
         path: '/admin',
         beforeEnter: ifAuthenticated,
         children: [{
-            path: '/admin',
-            name: 'admin.index',
-            component: Index
+                path: '/admin',
+                name: 'admin.index',
+                component: Index
             },
             ...adminAlbumsRoutes,
             ...adminArtistsRoutes,

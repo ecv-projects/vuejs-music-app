@@ -2,11 +2,10 @@
   <div class="container-admin">
     <router-link :to="{ name: 'admin.albums.index' }">Back</router-link>
     <h2 class="title is-3"> {{ album.name }} </h2>
-    <h2 class="title is-3"> {{ album.id }} </h2>
-    <p> {{ album.released }} </p>
-    <p> {{ album.tracks }} </p>
+    <p> Released : {{ album.released }} </p>
+    <p> Tracks : {{ album.tracks }} </p>
     <div class="albums-buttons">
-      <b-button type="is-light" @click="editAlbum">Edit</b-button>
+      <b-button type="is-info is-light" @click="editAlbum">Edit</b-button>
         <Button
           :button="'delete'"
           :module="'albums'"

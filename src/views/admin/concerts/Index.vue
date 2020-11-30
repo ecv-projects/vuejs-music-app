@@ -1,18 +1,24 @@
 <template>
   <div class="container-admin">
     <div class="admin-content concerts">
-      <h1>Admin Concert Index</h1>
-      <h2>All concerts</h2>
-      <b-button class="is-info add-concert" @click="create">Create Concert</b-button>
+      <h2 class="title is-2">All concerts</h2>
+      <b-button class="is-info add-concert" @click="create"
+        >Add Concert</b-button
+      >
       <div>
         <ul>
           <li v-for="concert in concerts" :key="concert.id">
-            <router-link :to="{ name: 'admin.concerts.show', params: { id: concert.id } }">
-              <ConcertCard class="concerts-item"
+              <ConcertCard
+                class="concerts-item"
                 :concert="concert"
-                :artist="getArtistByConcert(concert.artistId)" :artistUrl="'/admin/artists/'"
+                :artist="getArtistByConcert(concert.artistId)"
+                :artistUrl="'/admin/artists/'"
               ></ConcertCard>
-            </router-link>
+              <b-button
+                type="is-primary is-light"
+                @click="showConcert(concert.id)"
+                >Show Concert</b-button
+              >
           </li>
         </ul>
       </div>
@@ -22,7 +28,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import ConcertCard from "@/components/home/ConcertCard";
+import ConcertCard from "@/components/cards/ConcertCard";
 
 export default {
   components: {
@@ -31,23 +37,26 @@ export default {
   methods: {
     ...mapActions({
       fetchAllConcerts: "concerts/fetchAllConcerts",
-      fetchAllArtists: "artists/fetchAllArtists"
+      fetchAllArtists: "artists/fetchAllArtists",
     }),
     getArtistByConcert(id) {
       return this.artists.find((artist) => {
         return artist.id === id;
       });
     },
+    showConcert(id) {
+      this.$router.push({ name: "admin.concerts.show", params: { id: id } });
+    },
     create() {
       this.$router.push({
-        name: "admin.concerts.create"
-      })
-    }
+        name: "admin.concerts.create",
+      });
+    },
   },
   computed: {
     ...mapState({
       concerts: (state) => state.concerts.allConcerts,
-      artists: (state) => state.artists.allArtists
+      artists: (state) => state.artists.allArtists,
     }),
   },
   mounted() {
@@ -59,7 +68,11 @@ export default {
 </script>
 
 <style>
-  .concerts-item {
-    margin-bottom:20px
-  }
+.concerts-item {
+  margin-bottom: 20px;
+}
+
+.container-admin .concerts li {
+  margin-bottom: 40px;
+}
 </style>

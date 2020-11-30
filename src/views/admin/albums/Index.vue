@@ -1,15 +1,15 @@
 <template>
     <div class="container-admin">
         <div class="admin-content albums">
-            <h2 class="title is-3">All albums</h2>
-            <b-button class="is-success is-light" @click="create">Create Album</b-button>
+            <h2 class="title is-2">All albums</h2>
+            <b-button class="is-info" @click="create">Add Album</b-button>
             <div>
                 <ul>
                     <li
                     v-for="item in albums"
                     :key="item.id"
                     >
-                        <AlbumCard
+                        <AlbumCard  class="album-item"
                           :album="item"
                           :artist="getArtistByAlbum(item.artistId)"
                         ></AlbumCard>
@@ -22,7 +22,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
-import AlbumCard from "@/components/home/AlbumCard";
+import AlbumCard from "@/components/cards/AlbumCard";
 
 export default {
   components: {
@@ -73,6 +73,10 @@ export default {
     display: flex;
     justify-content: space-between;
   }
+
+  .album-item {
+  margin-bottom: 20px;
+}
 
   .albums ul li {
     margin-bottom: 50px;

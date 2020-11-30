@@ -2,7 +2,6 @@
   <div>
     <Navbar />
     <div class="container">
-      <h1 class="title is-1">Administration Space</h1>
       <div class="admin-content">
         <el-main>
           <transition name="fade" mode="out-in">

@@ -33,11 +33,25 @@
       "id": 5
     },
     {
-      "title": "test",
-      "published": "2020-11-22T23:00:00.000Z",
-      "image": "",
-      "content": "gfhfghgf",
+      "title": "Hatik s'est fait connaître grâce à son titre Angela, une reprise très efficace de Saïan Supa Crew.",
+      "published": "2020-11-22T17:41:53.863Z",
+      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/06/4a079932-59f5-4767-b150-f6bd2165d7d5/1136_hatik000_1iu40v.jpg",
+      "content": "Il s'agit du morceau intitulé Angela, qui comprend un sample du fameux hit Angela du collectif de rap Saïan Supa Crew, célèbre dans les années 1990. Hatik a gardé le côté suave et estival du titre Angela, tout en ajoutant son propre style et un texte perso. Ainsi, le rappeur français se dit prêt à accourir auprès de sa belle et à quitter sa zone pour vivre une romance !",
       "id": 6
+    },
+    {
+      "title": "Louane : découvrez le clip de «Désolée»",
+      "published": "2020-11-22T17:41:53.863Z",
+      "image": "https://img.nrj.fr/qtLFAKQQSoasGqckeMXfA1amrXU=/https://image-api.nrj.fr/medias/2019/08/louanne_5d52d3847bef1.jpg",
+      "content": "Pour «Désolée», Louane est mise en scène dans une maison où se trouvent différents couples. La chanteuse est spectatrice des tourments des amoureux présents dans l’habitation jusqu’au moment de la rupture qui fait tout s’effondrer.",
+      "id": 7
+    },
+    {
+      "title": "Indochine et Christine and the Queens chantent «3SEX»!",
+      "published": "2020-11-22T17:41:53.863Z",
+      "image": "https://images.radio-canada.ca/q_auto,w_1250/v1/ici-info/16x9/indochine-christine-and-the-queens.JPG",
+      "content": "Nicola Sirkis a fait appel à Christine and the Queens pour offrir à ses fans une version ultra moderne du titre sorti en 1985. Intitulé «3SEX», le duo fonctionne à merveille.",
+      "id": 8
     }
   ],
   "genres": [
@@ -101,6 +115,42 @@
       "genreId": 3,
       "likes": 20420,
       "description": "Damso, de son vrai nom William Kalubi Mwamba, né le 10 mai 1992 à Kinshasa (Zaïre, actuelle République démocratique du Congo), est un rappeur et auteur-compositeur-interprète belgo-congolais."
+    },
+    {
+      "id": 4,
+      "name": "Ninho",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Ninho_karlexander.jpg",
+      "origin": "France",
+      "genreId": 3,
+      "likes": 3829240,
+      "description": "Ninho, pseudonyme de William Nzobazola, est un rappeur et auteur-compositeur français né le 2 avril 1996 à Longjumeau dans l'Essonne."
+    },
+    {
+      "id": 5,
+      "name": "Christine and the Queens",
+      "avatar": "https://t0.gstatic.com/images?q=tbn:ANd9GcRm5RQQGi2pTLDEosF9piZ-H2yGndlfye06XZFW8gw6kSON08qpeCzEBBnBfkwz",
+      "origin": "France",
+      "genreId": 5,
+      "likes": 520226,
+      "description": "Christine and the Queens, ou simplement Chris, de son vrai nom Héloïse Letissier, est une auteure-compositrice-interprète et productrice française, née le 1ᵉʳ juin 1988 à Nantes."
+    },
+    {
+      "id": 6,
+      "name": "Jul",
+      "avatar": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/06/82588c06-9e31-43e1-ac73-d4e7faea04f6/1200x680_jul_fifou.jpg",
+      "origin": "France",
+      "genreId": 3,
+      "likes": 4573267,
+      "description": "Jul, de son vrai nom Julien Mari, est un rappeur et chanteur français, né le 14 janvier 1990 dans le 12ᵉ arrondissement de Marseille."
+    },
+    {
+      "id": 7,
+      "name": "Claude François",
+      "avatar": "https://cache.marieclaire.fr/data/photo/w1000_ci/5i/claudef.jpg",
+      "origin": "France",
+      "genreId": 5,
+      "likes": 181096,
+      "description": "Claude François, surnommé « Cloclo », né le 1ᵉʳ février 1939 à Ismaïlia et mort accidentellement le 11 mars 1978 à Paris, est un chanteur, danseur, musicien et producteur musical français des années 1960 et 1970. Lors de ses seize années de carrière, il est un des artistes français les plus appréciés du public."
     }
   ],
   "albums": [
