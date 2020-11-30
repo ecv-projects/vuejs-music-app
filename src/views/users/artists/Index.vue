@@ -5,7 +5,9 @@
       <div class="artists-container">
         <div v-for="item in artists"
           :key="item.id">
-          <ArtistCard :artist="item"/>
+            <router-link :to="{ path: `/artists/${item.id}` }">
+              <ArtistCard :artist="item"/>
+            </router-link>
         </div>
       </div>
     </div>
