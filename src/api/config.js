@@ -1,4 +1,4 @@
-import axios from 'axios'
+/* import axios from 'axios'
 
 const instance = axios.create({
   baseUrl: "http://localhost:3000/",
@@ -17,3 +17,4 @@ instance.interceptors.request.use(function (config) {
 })
 
 export default instance
+ */

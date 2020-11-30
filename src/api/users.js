@@ -1,4 +1,4 @@
-import axios from './config'
+/* import axios from './config'
 import jwt_decode from "jwt-decode"
 
 export default {
@@ -7,3 +7,4 @@ export default {
     return axios.get(`http://localhost:3000/users/${sub}`)
   }
 }
+ */

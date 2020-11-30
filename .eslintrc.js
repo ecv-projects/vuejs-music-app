@@ -25,6 +25,15 @@ module.exports = {
     'space-before-function-paren' : 0,
     'semi' : 0,
     'space-before-function-paren' : 0,
-    'eol-last' : 0
+    'eol-last' : 0,
+    'vue/no-unused-components' : 0,
+    'no-unused-vars' : 0,
+    'spaced-comment' : 0,
+    'no-unused-expressions' : 0,
+    'key-spacing' : 0,
+    'space-in-parens' : 0,
+    'no-labels' : 0,
+    'vue/require-prop-type-constructor' : 0,
+    'comma-spacing' : 0
   }
 }

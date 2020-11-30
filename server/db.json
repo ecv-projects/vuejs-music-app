@@ -1,28 +1,100 @@
 {
   "users": [
     {
-      "email": "toto@example.com",
-      "password": "$2a$10$dXNszRnkYBxyRPwYHgIfxeOD0/IBDbkI2aXpj1qXrMwvoVKPXa1Vq",
-      "id": 1
+      "email": "admin@admin.com",
+      "password": "$2a$10$uqTApfNx3Tvd5vlTIJgcPehOK9/Kp2UQLrcCNyz7RmLZkjFyLOaqq",
+      "name": "Michel",
+      "lastname": "Admin",
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "email": "alice@gmail.com",
+      "password": "$2a$10$08RXAUqXk4hs2ZcCUob5Yu69tDg41CUATIIpAL7egqnhd2IMdIHS6",
+      "name": "Alice",
+      "lastname": "Mouchard",
+      "role": "user",
+      "id": 3
+    },
+    {
+      "email": "juliette@gmail.com",
+      "password": "$2a$10$nkkrMZjfOz1/ajJkVQv7guvqiZQZ1pKpZB0g4iWB7Q3HPz5YH76Sq",
+      "name": "Juliette",
+      "lastname": "Connan",
+      "role": "user",
+      "id": 4
     }
   ],
   "news": [
     {
-      "id": 1,
-      "title": "News",
-      "published": "12/09/2020",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      "id": 4,
+      "title": "Le chanteur de Nada Surf jouera deux fois à cause du coronavirus : 'Annuler, c'était trop triste'",
+      "published": "2020-10-03T13:23:10.547Z",
+      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/03/28902b3e-76d6-405e-988c-ad7a06243efa/336x224_000_1mt0g6nadasurf.webp",
+      "content": "Le groupe américain préfère jouer deux fois pour éviter d'avoir à annuler son concert à la Cigale à Paris, contournant ainsi l'interdiction de jouer dans une salle de plus de mille spectateurs. C'est l'idée originale du groupe de rock et elle fait des émules."
+    },
+    {
+      "title": "Découvrez le nouveau clip de Jean Louis Murat « Si je m'attendais / Troie »  !",
+      "published": "2020-11-22T17:41:53.863Z",
+      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/01/03a0c59d-5dea-42ea-8ecc-5bd41502fb2a/336x224_jl-murat-2924a-print.webp",
+      "content": "A la fois doux et orageux, ce clip à double facettes s'est voulu avant tout : DADA. De ce fait, pour illustrer les deux nouveaux titres contrastés de Jean Louis Murat, Kelzang Ravach, cinéaste, animateur, collagiste et co-fondateur de Temple Caché, a souhaité tisser une histoire plus sensorielle que narrative",
+      "id": 5
+    },
+    {
+      "title": "Hatik s'est fait connaître grâce à son titre Angela, une reprise très efficace de Saïan Supa Crew.",
+      "published": "2020-11-22T17:41:53.863Z",
+      "image": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/06/4a079932-59f5-4767-b150-f6bd2165d7d5/1136_hatik000_1iu40v.jpg",
+      "content": "Il s'agit du morceau intitulé Angela, qui comprend un sample du fameux hit Angela du collectif de rap Saïan Supa Crew, célèbre dans les années 1990. Hatik a gardé le côté suave et estival du titre Angela, tout en ajoutant son propre style et un texte perso. Ainsi, le rappeur français se dit prêt à accourir auprès de sa belle et à quitter sa zone pour vivre une romance !",
+      "id": 6
+    },
+    {
+      "title": "Louane : découvrez le clip de «Désolée»",
+      "published": "2020-11-22T17:41:53.863Z",
+      "image": "https://img.nrj.fr/qtLFAKQQSoasGqckeMXfA1amrXU=/https://image-api.nrj.fr/medias/2019/08/louanne_5d52d3847bef1.jpg",
+      "content": "Pour «Désolée», Louane est mise en scène dans une maison où se trouvent différents couples. La chanteuse est spectatrice des tourments des amoureux présents dans l’habitation jusqu’au moment de la rupture qui fait tout s’effondrer.",
+      "id": 7
+    },
+    {
+      "title": "Indochine et Christine and the Queens chantent «3SEX»!",
+      "published": "2020-11-22T17:41:53.863Z",
+      "image": "https://images.radio-canada.ca/q_auto,w_1250/v1/ici-info/16x9/indochine-christine-and-the-queens.JPG",
+      "content": "Nicola Sirkis a fait appel à Christine and the Queens pour offrir à ses fans une version ultra moderne du titre sorti en 1985. Intitulé «3SEX», le duo fonctionne à merveille.",
+      "id": 8
     }
   ],
   "genres": [
-    { "id": 1, "name": "rock" },
-    { "id": 2, "name": "metal" },
-    { "id": 3, "name": "rap" },
-    { "id": 4, "name": "classical" },
-    { "id": 5, "name": "electro" },
-    { "id": 6, "name": "rnb" },
-    { "id": 7, "name": "alternative" },
-    { "id": 8, "name": "jazz" }
+    {
+      "id": 1,
+      "name": "rock"
+    },
+    {
+      "id": 2,
+      "name": "metal"
+    },
+    {
+      "id": 3,
+      "name": "rap"
+    },
+    {
+      "id": 4,
+      "name": "classical"
+    },
+    {
+      "id": 5,
+      "name": "electro"
+    },
+    {
+      "id": 6,
+      "name": "rnb"
+    },
+    {
+      "id": 7,
+      "name": "alternative"
+    },
+    {
+      "id": 8,
+      "name": "jazz"
+    }
   ],
   "artists": [
     {
@@ -51,42 +123,98 @@
       "genreId": 3,
       "likes": 20420,
       "description": "Damso, de son vrai nom William Kalubi Mwamba, né le 10 mai 1992 à Kinshasa (Zaïre, actuelle République démocratique du Congo), est un rappeur et auteur-compositeur-interprète belgo-congolais."
+    },
+    {
+      "id": 4,
+      "name": "Ninho",
+      "avatar": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Ninho_karlexander.jpg",
+      "origin": "France",
+      "genreId": 3,
+      "likes": 3829240,
+      "description": "Ninho, pseudonyme de William Nzobazola, est un rappeur et auteur-compositeur français né le 2 avril 1996 à Longjumeau dans l'Essonne."
+    },
+    {
+      "id": 5,
+      "name": "Christine and the Queens",
+      "avatar": "https://t0.gstatic.com/images?q=tbn:ANd9GcRm5RQQGi2pTLDEosF9piZ-H2yGndlfye06XZFW8gw6kSON08qpeCzEBBnBfkwz",
+      "origin": "France",
+      "genreId": 5,
+      "likes": 520226,
+      "description": "Christine and the Queens, ou simplement Chris, de son vrai nom Héloïse Letissier, est une auteure-compositrice-interprète et productrice française, née le 1ᵉʳ juin 1988 à Nantes."
+    },
+    {
+      "id": 6,
+      "name": "Jul",
+      "avatar": "https://cdn.radiofrance.fr/s3/cruiser-production/2020/06/82588c06-9e31-43e1-ac73-d4e7faea04f6/1200x680_jul_fifou.jpg",
+      "origin": "France",
+      "genreId": 3,
+      "likes": 4573267,
+      "description": "Jul, de son vrai nom Julien Mari, est un rappeur et chanteur français, né le 14 janvier 1990 dans le 12ᵉ arrondissement de Marseille."
+    },
+    {
+      "id": 7,
+      "name": "Claude François",
+      "avatar": "https://cache.marieclaire.fr/data/photo/w1000_ci/5i/claudef.jpg",
+      "origin": "France",
+      "genreId": 5,
+      "likes": 181096,
+      "description": "Claude François, surnommé « Cloclo », né le 1ᵉʳ février 1939 à Ismaïlia et mort accidentellement le 11 mars 1978 à Paris, est un chanteur, danseur, musicien et producteur musical français des années 1960 et 1970. Lors de ses seize années de carrière, il est un des artistes français les plus appréciés du public."
     }
   ],
   "albums": [
     {
-      "id": 1,
-      "name": "QALF",
-      "released": 2020,
-      "tracks": 15,
-      "artistId": 3
-    },
-    {
       "id": 2,
       "name": "Geography",
       "released": 2018,
-      "tracks": 13,
+      "tracks": "15",
       "artistId": 2
+    },
+    {
+      "id": 3,
+      "name": "Viva la Vida or Death and All His Friends",
+      "released": 2008,
+      "tracks": 10,
+      "artistId": 1
+    },
+    {
+      "id": 4,
+      "name": "A Head Full of Dreams",
+      "released": 2015,
+      "tracks": 11,
+      "artistId": 1
+    },
+    {
+      "name": "Everyday Life",
+      "released": "2019",
+      "tracks": "11",
+      "artistId": 1,
+      "id": 6
     }
   ],
   "concerts": [
     {
       "id": 1,
       "name": "Paris Bercy",
-      "date": "10/12/2019",
+      "date": "2020-12-10T23:00:00.000Z",
       "artistId": 3
     },
     {
       "id": 2,
       "name": "Olympia",
-      "date": "10/12/2018",
+      "date": "2018-08-10T23:00:00.000Z",
       "artistId": 3
     },
     {
       "id": 3,
       "name": "O2 Academy Manchester",
-      "date": "10/12/2018",
+      "date": "2020-08-16T23:00:00.000Z",
       "artistId": 2
+    },
+    {
+      "name": "Olympia",
+      "date": "2020-11-26T23:00:00.000Z",
+      "artistId": 1,
+      "id": 4
     }
   ]
 }
