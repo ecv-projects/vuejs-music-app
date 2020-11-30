@@ -5,14 +5,14 @@
         <b-navbar-item tag="router-link" :to="{ name: 'index' }">
           Home
         </b-navbar-item>
-        <b-navbar-item tag="router-link" :to="{ name: 'admin.index' }">
-          Espace admin
-        </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'news.index' }">
           News
         </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'artists.index' }">
           Artists
+        </b-navbar-item>
+        <b-navbar-item tag="router-link" :to="{ name: 'admin.index' }">
+          Admin Space
         </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'login' }">
           Login

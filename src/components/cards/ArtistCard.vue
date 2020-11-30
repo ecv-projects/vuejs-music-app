@@ -15,11 +15,6 @@
 
         <div class="content">
           <p>{{ artist.description.substring(0, 70) }}...</p>
-          <p>
-            <router-link :to="{ path: `/artists/${artist.id}` }">
-              Voir plus
-            </router-link>
-          </p>
         </div>
       </div>
     </div>

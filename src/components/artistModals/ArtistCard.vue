@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="artist-modal">
         <header>
           <div class="admin-content--artists__item__image">
               <figure class="image is-4by3">
@@ -45,7 +45,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import ArtistItemEdit from "@/components/artist/ArtistItemEdit";
+import ArtistItemEdit from "@/components/artistModals/ArtistItemEdit";
 
 export default {
   name: "ArtistCard",
@@ -82,3 +82,10 @@ export default {
   }
 }
 </script>
+
+<style>
+.admin-content--artists__item__image img {
+  width: auto!important;
+  margin: auto
+}
+</style>

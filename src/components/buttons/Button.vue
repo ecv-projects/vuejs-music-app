@@ -17,7 +17,7 @@
       v-if="button === 'edit'"
       class="is-info is-light"
       @click="goToEditPage()"
-      >Edit news</b-button
+      >Edit</b-button
     >
 
     <b-button v-if="button === 'save'" class="is-success" @click="saveItem()"

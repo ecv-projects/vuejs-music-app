@@ -1,10 +1,8 @@
 <template>
   <div class="home-content">
     <h1 class="title is-1">Home</h1>
-    <div v-if="profile.profile != null">
-      <h2 class="title is-2">
-        Hi {{ profile.profile.name }} !
-      </h2>
+    <div class="home-content_profile" v-if="profile.profile != null">
+      <h2 class="title is-2">Hi {{ profile.profile.name }} !</h2>
       <b-button class="is-danger is-light" @click="logout">Logout</b-button>
     </div>
     <div class="artists">
@@ -15,7 +13,9 @@
 
       <div class="artists-container">
         <div v-for="artist in artists" :key="artist.id">
-          <ArtistCard :artist="artist"></ArtistCard>
+          <router-link :to="{ path: `/artists/${artist.id}` }">
+            <ArtistCard :artist="artist"></ArtistCard>
+          </router-link>
         </div>
       </div>
     </div>
@@ -50,9 +50,9 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import AlbumCard from "../components/home/AlbumCard";
-import ArtistCard from "../components/home/ArtistCard";
-import NewsCard from "../components/home/NewsCard";
+import AlbumCard from "../components/cards/AlbumCard";
+import ArtistCard from "../components/cards/ArtistCard";
+import NewsCard from "../components/cards/NewsCard";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 
@@ -119,6 +119,16 @@ export default {
 </script>
 
 <style>
+.home-content_profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.home-content_profile h2 {
+  margin-bottom: 0 !important;
+}
+
 .albums-container,
 .artists-container {
   display: grid;

@@ -2,7 +2,7 @@
   <div class="container-admin">
     <div class="admin-content news">
       <h2 class="title is-2">All news</h2>
-      <b-button class="is-info add-news" @click="create">Create News</b-button>
+      <b-button class="is-info add-news" @click="create">Add News</b-button>
       <b-field label="">
         <b-input
           type="text"
@@ -13,11 +13,12 @@
       <div>
         <ul>
           <li v-for="item in filteredSearchList" :key="item.id">
-            <router-link
-              :to="{ name: 'admin.news.show', params: { id: item.id } }"
-            >
               <NewsCard :news="item" />
-            </router-link>
+               <b-button
+                type="is-primary is-light"
+                @click="showNews(item.id)"
+                >Show News</b-button
+              >
           </li>
         </ul>
       </div>
@@ -27,7 +28,7 @@
 
 <script>
 import { mapActions, mapState } from "vuex";
-import NewsCard from "@/components/home/NewsCard";
+import NewsCard from "@/components/cards/NewsCard";
 
 export default {
   components: {
@@ -46,6 +47,9 @@ export default {
       this.$router.push({
         name: "admin.news.create",
       });
+    },
+    showNews(id) {
+      this.$router.push({ name: "admin.news.show", params: { id: id } });
     },
   },
   computed: {
@@ -71,6 +75,11 @@ export default {
 
 .container-admin .news .box {
   margin-bottom: 20px;
+}
+
+
+.container-admin .news li {
+  margin-bottom: 40px;
 }
 </style>
 

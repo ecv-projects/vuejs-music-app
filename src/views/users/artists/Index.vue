@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="artists">
+    <div id="artist">
       <h2 class="title is-2">All artists</h2>
       <div class="artists-container">
         <div v-for="item in artists"
@@ -14,7 +14,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
-import ArtistCard from "@/components/home/ArtistCard";
+import ArtistCard from "@/components/cards/ArtistCard";
 
 export default {
   name: "List of artists",
@@ -36,3 +36,7 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>
