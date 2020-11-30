@@ -5,10 +5,11 @@ Juliette CONNAN, Alice MOUCHARD, Julie SALHA
 
 (M2 DEV ECV Digital)
 
-Nous avons créé le front d'un site de news de musique avec les points suivants : 
+Nous avons créé le front d'un site de news de musique avec les points suivants :
 
 - inscription + connexion des utilisateurs
 - connexion d'un administrateur + accès à l'espace admin
+- par defaut la personne qui se crée un compte à la rôle "user" et donc pas acces à l'espace admin (renvoyé vers une page de login)
 
 Comptes existants :
 admin => id: admin@admin.com / password : azerty

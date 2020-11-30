@@ -15,6 +15,14 @@
       "lastname": "Mouchard",
       "role": "user",
       "id": 3
+    },
+    {
+      "email": "juliette@gmail.com",
+      "password": "$2a$10$nkkrMZjfOz1/ajJkVQv7guvqiZQZ1pKpZB0g4iWB7Q3HPz5YH76Sq",
+      "name": "Juliette",
+      "lastname": "Connan",
+      "role": "user",
+      "id": 4
     }
   ],
   "news": [
